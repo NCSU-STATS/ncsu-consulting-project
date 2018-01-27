@@ -1,0 +1,46 @@
+---
+title: "Yeast Drying : Introduction"
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+```
+
+## Yeast Drying
+
+Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering.  More recently it has become know that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bio-remediation.  The ability to store bacteria for long periods of time is an important research objective. Scientists need to be able to keep libraries of bacteria to compare bacterial populations and to share bacteria among colleagues.  
+
+For alternative energy purposes, if bacteria can reliably be dried and rehydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.  Ethanol (ethyl alcohol) is the same type of alcohol found in alcoholic beverages. It can be used as automotive fuel or as a environmentally friendly additive to conventional gasoline as it burns cleaner.  Biofules are manufactured through a process of fermenting biomass such as corn or sugarcane.  Fermentation is a metabolic process of bacteria such as year where sugar is consumed in the absence of oxygen to produce alcohol.
+
+This study aims to evaluate a variety of bacterial drying methodologies to determine optimal conditions for re-hydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are rehydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of CO produced after rehydration. 
+
+
+- Central Question : Can we improve upon existing methods of drying yeast? 
+- Background : Why is the topic important : advancement of scientific knowledge on bacteria, and alternative energy research
+- Implications : What will a successful outcome of the research contribute? 
+- Other ideas to develop : 
+- Things to drop : content related to human health.  Maybe this research is primarily about alternative energy. 
+- Definitions and background research needed : 
+    1) background on ethanol production.
+    2) research existing mechanisms of yeast preservation.
+    3) understand the variables and methodologies used in the experimental drying procedures. 
