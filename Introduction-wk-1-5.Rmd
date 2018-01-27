@@ -1,0 +1,32 @@
+---
+title: "Yeast Drying : Introduction"
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+```
+
+## Yest Drying
+
+Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering.  More recently it has become know that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bioremediation.  The ability to store bacteria for long periods of time is an important research topic. Scientists need to be able to keep libraries of bacteria to compare bacterial populations and to share bacteria among colleagues.  For alternative energy purposes, if bacteria and reliably be dried and rehydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.   
+This study aims to resolve a variety of bacterial drying methodologies to determine optimal conditions for rehydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are rehydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of CO produced after rehydration. 
