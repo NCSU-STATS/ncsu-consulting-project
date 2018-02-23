@@ -1,0 +1,39 @@
+---
+title: "On Ethics In Statistical Practice"
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+```
+
+
+
+Ethical considerations are part of many modern data analytic processes. Considerations of health, economic, environmental, and privacy impacts of analytic work are becoming the norm for statisticians working in health care.  IRB's and privacy laws are instituted to protect patients in the health care setting.  Here we take a critical view towards the practices that are designed to protect patients and ask - can we do better?
+
+There is no denying that the health care system is broken in the USA.  Care is fragmented.  Research is difficult.  Costs are high.  It's a big topic.  One wonders who the true beneficiaries of health care are.  Is it the patient or drug companies, physicians, insurers, and institutions all taking a cut of the health care dollar. 
+
+A simple thought experiment for you; imagine a system where all parties have taken an oath to do no harm, where scientific issues are settled in a peer review setting, where research funding and care delivery remuneration all come from one place. Imagine a system with unified record keeping systems, and where privacy laws were not necessary because there were no adverse consequences for being sick or seeking care.  Imagine a system where biologic samples are shared and commonly available for research.  Imagine a system that promotes peer sharing and dose not unnecessarily pit researcher against researcher to compete for funding, biologic samples, and meta data. Imagine a system driven by care and not economics. 
+
+Many of the ethical dilemmas faced by statisticians would not exist in the idealized setting described above. It's not natural for us as health care workers and institutions to put our short term economic needs before those very long term goals of the idealized setting I described. Until that happens, we need ethical controls.  We need to understand and vocalize how the disparity in pay between the lab bench workers and the big pharma executives drives ethical dilemmas such as that faced by Dr Nissen and GSK. Understanding the dynamics of funding and sharing of information needs to lead to institutional changes in the way research is conducted to reduce ethical dilemmas in health care research. 
+
+It's good that we have ethical infrastructure to protect patients in health care. I'm hopeful that a national conversation on how care can be better delivered will lead to fewer dilemmas and conflics of interest. 
