@@ -1,0 +1,27 @@
+purpose: see the difference in concentration with different liquid volumes having a control to substract out what the cells have inside them from the rich media (what the rinse doesn't touch),,,,,,,,,,,
+,,,,,,,,,,,
+Tube,substrate,Volume to add in mL,total liquid volume,Media type,gas type,Formulation,substrate size (cm^2),coating volume (uL), coated surface area (cm^2),shaker speed,OD at 2pm
+SYNGAS,,,,,,,,,,,
+A,3MM,4,4.1,1YCM,syngas,1,10,100,5,50,0.117
+B,3MM,4,4.1,1YCM,syngas,1,10,100,5,50,0.091
+C,3MM,4,4.1,1YCM,syngas,1,10,100,5,50,0.064
+D,3MM,4,4.1,1YCM,5.0 Ar,1,10,100,5,50,0.073
+E,3MM,4,4.1,1YCM,5.0 Ar,1,10,100,5,50,0.104
+F,3MM,4,4.1,1YCM,5.0 Ar,1,10,100,5,50,0.081
+G,3MM,6,6.1,1YCM,syngas,1,10,100,5,50,0.18
+H,3MM,6,6.1,1YCM,syngas,1,10,100,5,50,0.159
+I,3MM,6,6.1,1YCM,syngas,1,10,100,5,50,0.135
+J,3MM,8,8.1,1YCM,syngas,1,10,100,5,50,0.173
+K,3MM,8,8.1,1YCM,syngas,1,10,100,5,50,0.169
+L,3MM,8,8.1,1YCM,syngas,1,10,100,5,50,0.159
+,,,,,,,,,,,
+,total,66,,,,,total,1200,,,
+,,,,,,,,,,,
+NOTES:,,,,,,,,Formulations ,,,
+Started with 2'A and 2'B at 9am,,,,,,,,cells,media,total,
+OD600 of 2'C at 915am is 1.4: The new stock solutions might have improved growth a little,,,,,,,,#1 ,0.3,,
+rinsed with 24mL of 1YCM between spins,,,,,,,,420,980,1400,
+into shaker at 1130,,,,,,,,,,,
+Removed from shaker and gas samples taken at 1130am on 5/22/15. No CO in any samples,,,,,,,,,,,
+"OD and liquid samples taken at 2pm. Samples remained sealed until then.  coatings removed, tube vortexed, then samples taken",,,,,,,,,,,
+"I hope that wasn't too long between and GC and OD/liquid.  They were upright on the bench that whole time, so I don't expect that there was much reacting going on.",,,,,,,,,,,

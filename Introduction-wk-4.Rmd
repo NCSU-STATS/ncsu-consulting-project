@@ -24,6 +24,7 @@ library(latex2exp)
 library(pander)
 library(ggplot2)
 library(GGally)
+setwd("C:/E/brucebcampbell-git/ncsu-consulting-project/")
 ```
 
 ## Bacteria Drying

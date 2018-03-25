@@ -1,0 +1,29 @@
+purpose: see how different concentrations of a protective disaccharide affect dry stability along with longer drying times,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,340
+Tube,substrate,Volume to add in mL,total liquid volume,Media type,Drying time at 25in Hg (hrs),storage headspace,Formulation,substrate size (cm^2),coating volume (uL), coated surface area (cm^2),shaker speed,,H2,O2,N2,CO,CO2,,scaled CO,scaled avg
+SYNGAS,,,,,,,,,,,,,,,,,,,,
+M,602h,4,4.12,1YCM,1,5.0 Ar,2,10,120,10,50,,12711.9,,342.4,1247.6,53.9,,1238.85514,1193
+N,602h,4,4.12,1YCM,1,5.0 Ar,2,10,120,10,50,,12392.8,,361.4,1187.9,67.3,,1117.559491,
+O,602h,4,4.12,1YCM,1,5.0 Ar,2,10,120,10,50,,11861.5,,327.6,1143.5,60.9,,1186.782662,
+P,602h,4,4.12,1YCM,2,5.0 Ar,1,10,120,10,50,,13997.5,,471.4,412.7,347.1,,297.6622826,324.5666667
+Q,602h,4,4.12,1YCM,2,5.0 Ar,1,10,120,10,50,,13709.3,,511.7,376.4,349.9,,250.0996678,
+R,602h,4,4.12,1YCM,2,5.0 Ar,1,10,120,10,50,,13487.9,,609.6,184.6,374.9,,102.9593176,
+S,602h,4,4.12,1YCM,3,5.0 Ar,1,10,120,10,50,,13631.7,,419.5,522.5,290.8,,423.4803337,390.1
+T,602h,4,4.12,1YCM,3,5.0 Ar,1,10,120,10,50,,12520.4,,607.6,363.3,300.7,,203.2949309,
+U,602h,4,4.12,1YCM,3,5.0 Ar,1,10,120,10,50,,12393.6,,671,284.5,328.1,,144.1579732,
+V,602h,4,4.12,1YCM,4,5.0 Ar,1,10,120,10,50,,13162,,389.4,704.3,208.6,,614.951207,521.3333333
+W,602h,4,4.12,1YCM,4,5.0 Ar,1,10,120,10,50,,13094,,474.4,390,301.4,,279.5109612,
+W,602h,4,4.12,1YCM,4,5.0 Ar,1,10,120,10,50,,13127.6,,454.2,469.7,274.6,,351.6028181,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,total,48,,,,,,total,1440,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+NOTES:,,,,,,,,,Formulations ,,,,,,,,,,,
+#2 is rerun from 7/23 on 602h,,,,,,,,,cells,media,total,,,,,,,,,
+worst ranked coating is end of each group,,,,,,,,no notch,#1 ,0.5,,,,,,,,,,
+As time passed papers became increasingly wrinkly but shaped up fine in balch tube,,,,,,,,,600,600,1200,,,,,,,,,
+assay 7/28,,,,,,,,.5g sucrose,# 2,,,,,,,,,,,
+"formulation 2 cells washed off, solution is more soluble due to sugar; longer drying times showed more cells sticking to paper",,,,,,,,,200,200,400,,,,,,,,,
+In shaker for 24hrs ,,,,,,,,,,,,,,,,,,,,

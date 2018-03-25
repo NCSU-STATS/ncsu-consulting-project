@@ -1,0 +1,208 @@
+---
+title: "Bacteria Drying : Introduction"
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+
+```
+
+## Bacteria Drying
+
+Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering and more recently it has become known that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bio-remediation.  The ability to store bacteria for long periods of time is an important research objective. Scientists need to be able to keep libraries of bacteria to compare bacterial populations over time and to share bacteria among colleagues.  For alternative energy purposes, if bacteria can reliably be dried and rehydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.  For bio-remediation if bacteria can be reliably rehydrated on site then deployment becomes easier as storing and transproting the bacteria in a dehydrated state is more cost effective.   
+
+This study aims to evaluate a variety of bacterial drying methodologies to determine optimal conditions for re-hydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are rehydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of carbon monoxide produced after rehydration.  Increasing numbers of bacteria that survive the drying process lead to decreasing carbon monoxide levels.  Since this measurement is the sum of many small contributions we expect the reponse to be normally distributed. The overall goals are to find the conditions which minimize the carbon monoxide levels - thus providing optimal conditions for bacteria rehydration. 
+
+##Methods 
+
+The bacteria drying experiments are carried out carefully in a traditional biological laboratory.  Bacteria are grown in culture media prior to the experiments and samples from the same media are used in the different experiments for drying and storage.  After storage bacteria are rehydrated in individual tubes which are first evacuated with argon and then infused with hydrogen and carbon dioxide to enable respiration. Treatments are grouped into experiments and carried out by different individuals.  There are two phases to the experiment - a drying phase and a rehydration phase. The treatment could be present in the drying phase or the rehydration phase. The design is both qualitative and quantitative in the treatments applied. There are 43 experiments in all included in the data set. They do not all have the same number of variables recorded, and some of the experiments have subgroups of conditions while others have replicates.  
+
+Detailed notes are included with the experiments indicating any anomalies in them, and describing the lab procedures and materials used.  Each sample is a unit of a cell formulation which is dried, stored, and then rehydrated. An experiment generally contains 10-25 formaulations. The measures for this study are comprised of condition measurements for the experiment and response conditions of the outcome.  The responses are measures of cellular respiration; H2,O2,N2,CO	CO2.
+
+Media is spun in a Beckman, and then rinsed with 20 mL from 25 mL bottle of 1YCM PCG  with 1 mL Cys and 0.2 M NaOH. After that the sample is tube centrifuged in rotana for 15min at 4C and 6000rcf.  After drying tubes are tubes flushed with argon at 20 psi for 25 minutes and then stored.  An excel workbook is kept with the experimental data and other lab notes.  This consists of 63 worksheets which are 
+preprocessed from the lab workbook into a series of files suitable for ingest into an R data frame object.  
+
+Experiment ID's are provided and levels of treatments are coded by hand from lab notes.  For example, an experiment could include varying levels of chemical additives.  The chemical additive would be coded as a treatment factor within the experiment.  Samples that do not have a measured response are redacted.  In all there are 43 experiments with 775 samples.  73 samples have missing responses which are redacted from the analysis.  Data is analyzed by a 2 way ANOVA on the experiment and treatment.
+
+
+# LAB BOOK 
+
+## Data Preparation
+
+Here we detail our first look into the data.  An Excel VBA script was run to extract the individual experiments into csv files and the resultnig files were investigated for inclusion in the data analysis.  Not all of the worksheet in the data workbook contain experimental data. After looking at each file - there were 44 experients eligable for inclusion in the data analyis.  
+
+## VBA Extract
+```
+Private Sub SaveAllSheetsAsCSV()
+On Error GoTo Heaven
+
+' each sheet reference
+Dim Sheet As Worksheet
+' path to output to
+Dim OutputPath As String
+' name of each csv
+Dim OutputFile As String
+
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+Application.EnableEvents = False
+
+' ask the user where to save
+OutputPath = InputBox("Enter a directory to save to", "Save to directory", Path)
+
+If OutputPath <> "" Then
+
+    ' save for each sheet
+    For Each Sheet In Sheets
+
+        OutputFile = OutputPath & "\" & Sheet.Name & ".csv"
+
+        ' make a copy to create a new book with this sheet
+        ' otherwise you will always only get the first sheet
+        Sheet.Copy
+        ' this copy will now become active
+        ActiveWorkbook.SaveAs Filename:=OutputFile, FileFormat:=xlCSV, CreateBackup:=False
+        ActiveWorkbook.Close
+    Next
+
+End If
+
+Finally:
+Application.ScreenUpdating = True
+Application.DisplayAlerts = True
+Application.EnableEvents = True
+
+Exit Sub
+
+Heaven:
+MsgBox "Couldn't save all sheets to CSV." & vbCrLf & _
+        "Source: " & Err.Source & " " & vbCrLf & _
+        "Number: " & Err.Number & " " & vbCrLf & _
+        "Description: " & Err.Description & " " & vbCrLf
+
+GoTo Finally
+End Sub
+
+
+```
+
+###Create master data frame from experiment files 
+```{r, fig.height=8,fig.width=8}
+setwd("C:/E/brucebcampbell-git/ncsu-consulting-project/")
+wd <- getwd()
+nwd <- paste(wd,"data/r-load-data/",sep = "/")
+setwd(nwd)
+#getwd()
+file.list <-list.files(nwd)
+
+header.list <- list()
+#Inspect the Headers 
+for(i in 1:length(file.list))
+{
+  #print(i)
+  file.name <- file.list[[i]]
+  experiment.name  <- tools::file_path_sans_ext(file.name)
+  df <- read.csv(paste(nwd,file.name,sep="/"))
+  header.list[[i]] <- names(df)
+}
+
+#fileConn<-file("output.txt")
+str.list <-list()
+for(i in 1:length(header.list))
+{
+  #print (i)
+  file.name <- file.list[[i]]
+  str.wr <- paste(as.character(c(file.name,header.list[[i]])), collapse=", ")
+  #print(str.wr)
+  str.list[[i]] <- str.wr
+  
+}
+#writeLines(str.list, fileConn)
+#close(fileConn)
+#lapply(str.list, write, "output.txt", append=TRUE)
+
+dfmaster <- data.frame()
+for(i in 1:length(file.list))
+{
+  file.name <- file.list[[i]]
+  #experiment.name <- strsplit(as.character(file.name),split = ".")[[2]]
+  experiment.name  <- tools::file_path_sans_ext(file.name)
+  df <- read.csv(paste(nwd,file.name,sep="/"))
+  df$experiment <- rep(experiment.name,nrow(df))
+  df$experiment.count <- rep(nrow(df),nrow(df))
+  df$experiment.mean <- rep(mean(df$CO,na.rm = TRUE),nrow(df))
+  names(df)
+  
+  if("Formulation.pH" %in% colnames(df))
+  {
+    cat(file.name)
+  } else
+  {
+    df$Formulation.pH <- NULL
+  }
+  
+  
+  if("Formulation" %in% colnames(df))
+  {
+    cat(file.name)
+  } else
+  {
+    df$Formulation <- "NA" 
+  }
+  
+  
+  names.to.keep <- c ("experiment","Formulation", "CO", "experiment.count","experiment.mean") 
+  
+  df.keep <- df[,names.to.keep]
+  df.keep$CO <- as.numeric( df.keep$CO)
+  #plot(df.keep$CO, main=experiment.name)
+  
+  sum(is.na(df.keep$CO))
+  dfmaster <- rbind(df.keep,dfmaster)
+}
+
+dfmaster <- dfmaster[order(dfmaster$experiment.mean,decreasing = TRUE),]
+  
+sum(is.na(dfmaster$CO))
+#boxplot(CO ~ as.factor(experiment), data = dfmaster)
+
+library(ggplot2)
+ggplot(aes(y = CO, x = experiment), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+Raman training
+Initialize the sample plate scroll it all down.
+"once the software stop, put sample in."
+system setting for fluorescence sample don’t want to baseline correction.
+device setting -55 temperature
+"1064, sensitivity checking, suppress fluorescence "
+583 full strength 
+785 0-255
+integration time 
+turn microscope on . use 1 first and 2 when start using. shutter open. reflected and transmitted . 10X IR 40X IR 50X  
+IR is used for opaque sample 784 1064
+"flat line saturated, shorter integration number or higher laser"
+785nm change power laser setting
+continuous mode for real time focus
+before going to laser turn off microscope lamp not sure with the shutter.
+change to 1 after using laser before opening the door.
+to reduce ND filter have to have IR objective on.
+Under tools Aux camera setting
+
+image mapping
+tools objective match 
+set to 1 focus
+open setup image mapping window under tools
+set to 2 
+save path
+choose step size  min 1um
+on the front push to left on the control panel 
+play
+
+z scan 
+move form positive to negative 
+click control panel set to 0 (small black button on the right)
+scan start 0 stop 0.1 step 0.02 (sample plate moving downwards)
+
+1064 power go unto 400
+red dyed fabric have peaks 

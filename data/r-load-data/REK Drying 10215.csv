@@ -1,0 +1,13 @@
+Tube,Notch placement (temp column.),substrate,Volume to add in mL,total liquid volume,Media type,headspace,Drying Time,Storage,Formulation,substrate size (cm^2),coating volume (uL), coated surface area (cm^2),shaker speed,,H2,O2,N2,CO,CO2,,Scaled CO,N2 Base,Average,Condition
+A,No notch,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,1,10,200,10,50,,12492.5,0,351.7,1292.8,27.4,,1249.792437,,,
+B,No notch,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,1,10,200,10,50,,12246.4,0,332.7,1304.5,0,,1333.122934,,,
+C,No notch,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,1,10,200,10,50,,11306.3,0,477.5,1144.4,50.1,,814.860733,,1132.592034,
+D,LN,3MM,4,4.2,1YCM (PCG 9/22/15),5.0 Ar,60 min @ 25in Hg,balch,2,10,200,10,50,,12315.3,0,322.3,1103.8,79.4,,1164.418244,,,
+E,LN,3MM,4,4.2,1YCM (PCG 9/22/15),5.0 Ar,60 min @ 25in Hg,balch,2,10,200,10,50,,12164.1,0,316.7,1154.9,44.6,,1239.867382,,,
+F ,LN,3MM,4,4.2,1YCM (PCG 9/22/15),5.0 Ar,60 min @ 25in Hg,balch,2,10,200,10,50,,11979.7,0,324.8,1222.5,35.6,,1279.710591,,1227.998739,
+G,RN,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,LiCl bottle,1,10,200,10,50,,11834.5,0,317.8,1253.6,0,,1341.170548,,,
+H,RN,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,LiCl bottle,1,10,200,10,50,,11510.6,0,354.1,1267.6,0,,1217.125106,,,
+I,RN,3MM,4,4.2,1YCM (PCG 10/01/15),5.0 Ar,60 min @ 25in Hg,LiCl bottle,1,10,200,10,50,,11761.9,0,320.8,1242.4,0,,1316.758105,,1291.684586,
+J,MD,3MM,4,4.2,1YCM (PCG 1/4Na 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,3,10,200,10,50,,12356.8,0,332.5,1068,82.1,,1092.090226,,,
+K,MD,3MM,4,4.2,1YCM (PCG 1/4Na 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,3,10,200,10,50,,11947.9,0,311.8,1117.8,50.4,,1218.896729,,,
+L,MD,3MM,4,4.2,1YCM (PCG 1/4Na 10/01/15),5.0 Ar,60 min @ 25in Hg,balch,3,10,200,10,50,,11739,0,327.7,1193.4,35.6,,1238.19347,,1183.060141,

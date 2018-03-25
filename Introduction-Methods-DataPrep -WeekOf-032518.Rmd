@@ -1,0 +1,226 @@
+---
+title: "Bacteria Drying "
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+bibliography: Introduction-Methods-DataPrep_-WeekOf-032518.bib
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+
+```
+
+## Bacteria Drying
+
+Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering and more recently it has become known that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bio-remediation.  The ability to store bacteria for long periods of time is an important research objective. Scientists need to be able to keep libraries of bacteria to compare bacterial populations over time and to share bacteria among colleagues.  For alternative energy purposes, if bacteria can reliably be dried and re-hydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.  For bio-remediation if bacteria can be reliably re-hydrated on site then deployment becomes easier as storing and transporting the bacteria in a dehydrated state is more cost effective.   
+
+This study aims to evaluate a variety of bacterial drying methodologies to determine optimal conditions for re-hydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are re-hydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of carbon monoxide produced after re-hydration.  Increasing numbers of bacteria that survive the drying process lead to decreasing carbon monoxide levels.  Since this measurement is the sum of many small contributions we expect the response to be normally distributed. The overall goals are to find the conditions which minimize the carbon monoxide levels - thus providing optimal conditions for bacteria re-hydration. 
+
+##Methods 
+
+### Method introduction
+
+The bacteria drying experiments are carried out carefully in a traditional biological laboratory.  Bacteria are grown in culture media prior to the experiments and samples from the same media are used in the different experiments for drying and storage.  After storage bacteria are re-hydrated in individual tubes which are first evacuated with argon and then infused with hydrogen and carbon dioxide to enable respiration. Treatments are grouped into experiments and carried out by different individuals.  There are two phases to the experiment - a drying phase and a re-hydration phase. The treatment could be present in the drying phase or the re-hydration phase. The design is both qualitative and quantitative in the treatments applied. 
+
+Vacuum exposure is known to cause damage to bacteria cell membranes and that there is a repair mechanism for eliminating the damage[@PMID:12180476].  This study noted that the damage can be repaired after storage when the temperature is raised. It's also know that freeze-drying can cause genetic injuries in bacteria with the number of mutations increasing with the length of the storage time [@ASHWOODSMITH1980205].  These are just some of the underlying factors that the experiments will be implicitly measuring.
+
+Detailed notes are included with the experiments indicating any anomalies in them, and describing the lab procedures and materials used.  Bacteria are grown from 7 cultures which are used in the experiments. Each sample is a unit of a cell formulation which is dried, stored, and then re-hydrated. Media is spun in a Beckman, and then rinsed with 20 mL from 25 mL bottle of 1YCM PCG  with 1 mL Cys and 0.2 M NaOH. After that the sample is tube centrifuged in rotana for 15min at 4C and 6000rcf.  After drying tubes are tubes flushed with argon at 20 psi for 25 minutes and then stored.  
+
+An experiment generally contains 10-25 formulations. In all there are 43 experiments with 775 samples.  73 samples have missing responses which are redacted from the analysis.  The measures for this study are the experiment ID's which encode the conditions for the experiment and response conditions of the outcome.  The responses are measures of cellular respiration; H2,O2,N2,CO	CO2.
+
+### Statistical Analysis
+
+We will be investigating a several approaches to analyzing this data. The freest step will be to implement a 1 way ANOVA on the experiment and treatment.  This will determine if the mean responses of the experiment are different. The model we use is that the repose $y_{ij}$ of replicate $i$ in the $j$ is expressed as 
+${\displaystyle y_{i,j}=\mu +\tau _{j}+\varepsilon _{i,j}}$ where ${\displaystyle i=1,\dotsc ,I}$ an index over the replicates ${\displaystyle j=1,\dotsc ,J}$ is the index over experiments, ${\displaystyle \mu _{j}}$ is the mean of the CO measurements for experiment $j$,${\displaystyle \mu }$ is the overall mean CO, and $\tau_j$ is the treatment effect for experiment $j$ - a deviation from the overall mean.  The errors $\epsilon_{i \;j} \sim N(0,\sigma^2)$ are normally distributed with equal variance.
+
+The response is assumed to be normal but we perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks for validation of the one way ANOVA, and as an precursor to selecting the optimal experimental conditions.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. We expect the Kruskal-Wallis result will be consistent with the usual 1 way ANOVA.  The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
+
+$$H_0 : P(\mu_j > \mu_k) = \frac{1}{2} \;\; \large{\forall} \;\; j,k \in 1,\dotsc ,J$$
+
+$$H_a : \large \exists \;\;j,k \;\;\in 1,\dotsc ,J  :   P(\mu_j > \mu_k) \neq \frac{1}{2} $$
+A significant Kruskal-Wallis test indicates that at least one experimental median stochastically  dominates the others.  We do not know which one.  The common options for determining stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.  Appendix A [REVISIT] contains a detailed description of the Kruskal-Wallis and Dunn tests. 
+
+The input to the Dunn test is the per group average rank $\bar{R_j} = \frac{R_j}{n_j}$ and the z-test statistic for groups $j,k$ is 
+
+$$z_{j,k} = \frac{\bar{R_j} - \bar{R_k}}{\sigma_{j,k}}$$ 
+$\sigma_{j,k}$ is a funtion of the overall, group, and rank tie counts (see appendix A).  The null hypothesis of the group pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second groups is one half - $H_0 : P(X_j > X_k) = \frac{1}{2}$. 
+
+The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. 
+
+
+ 
+The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+ 
+## Data Description and Preparation
+An excel workbook is kept with the experimental data and other lab notes.  This consists of 63 worksheets which are pre-processed from the lab workbook into a series of files suitable for ingest into an R data frame object. An Excel VBA script is run to extract the individual experiments into csv files and the resulting files were investigated for inclusion in the data analysis.  Not all of the worksheet in the data workbook contain experimental data. After looking at each file - there were 44 experiments eligible for inclusion in the data analysis.  Of these 44 one was determined to not have any response measurements and was redacted from the statistical analysis.
+
+
+###  VBA Extract
+
+This is the listing of code for the extract of worksheets from excel to csv format. 
+```
+Private Sub SaveAllSheetsAsCSV()
+On Error GoTo Heaven
+
+' each sheet reference
+Dim Sheet As Worksheet
+' path to output to
+Dim OutputPath As String
+' name of each csv
+Dim OutputFile As String
+
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+Application.EnableEvents = False
+
+' ask the user where to save
+OutputPath = InputBox("Enter a directory to save to", "Save to directory", Path)
+
+If OutputPath <> "" Then
+
+    ' save for each sheet
+    For Each Sheet In Sheets
+
+        OutputFile = OutputPath & "\" & Sheet.Name & ".csv"
+
+        ' make a copy to create a new book with this sheet
+        ' otherwise you will always only get the first sheet
+        Sheet.Copy
+        ' this copy will now become active
+        ActiveWorkbook.SaveAs Filename:=OutputFile, FileFormat:=xlCSV, CreateBackup:=False
+        ActiveWorkbook.Close
+    Next
+
+End If
+
+Finally:
+Application.ScreenUpdating = True
+Application.DisplayAlerts = True
+Application.EnableEvents = True
+
+Exit Sub
+
+Heaven:
+MsgBox "Couldn't save all sheets to CSV." & vbCrLf & _
+        "Source: " & Err.Source & " " & vbCrLf & _
+        "Number: " & Err.Number & " " & vbCrLf & _
+        "Description: " & Err.Description & " " & vbCrLf
+
+GoTo Finally
+End Sub
+
+
+```
+
+#### Create master data frame from experiment files and plot boxplot of CO response. 
+```{r, fig.height=8,fig.width=8}
+setwd("C:/E/brucebcampbell-git/ncsu-consulting-project/")
+wd <- getwd()
+nwd <- paste(wd,"data/r-load-data/",sep = "/")
+setwd(nwd)
+file.list <-list.files(nwd)
+
+header.list <- list()
+#Inspect the Headers 
+for(i in 1:length(file.list))
+{
+  file.name <- file.list[[i]]
+  experiment.name  <- tools::file_path_sans_ext(file.name)
+  df <- read.csv(paste(nwd,file.name,sep="/"))
+  header.list[[i]] <- names(df)
+}
+
+str.list <-list()
+for(i in 1:length(header.list))
+{
+  file.name <- file.list[[i]]
+  str.wr <- paste(as.character(c(file.name,header.list[[i]])), collapse=", ")
+  str.list[[i]] <- str.wr
+}
+
+dfmaster <- data.frame()
+for(i in 1:length(file.list))
+{
+  file.name <- file.list[[i]]
+  #experiment.name <- strsplit(as.character(file.name),split = ".")[[2]]
+  experiment.name  <- tools::file_path_sans_ext(file.name)
+  df <- read.csv(paste(nwd,file.name,sep="/"))
+  df$experiment <- rep(experiment.name,nrow(df))
+  df$experiment.count <- rep(nrow(df),nrow(df))
+  df$experiment.mean <- rep(mean(df$CO,na.rm = TRUE),nrow(df))
+  names(df)
+  
+  if("Formulation.pH" %in% colnames(df))
+  {
+    cat(file.name)
+  } else
+  {
+    df$Formulation.pH <- NULL
+  }
+  
+  
+  if("Formulation" %in% colnames(df))
+  {
+    cat(file.name)
+  } else
+  {
+    df$Formulation <- "NA" 
+  }
+  
+  
+  names.to.keep <- c ("experiment","Formulation", "CO", "experiment.count","experiment.mean") 
+  
+  df.keep <- df[,names.to.keep]
+  df.keep$CO <- as.numeric( df.keep$CO)
+  #plot(df.keep$CO, main=experiment.name)
+  
+  sum(is.na(df.keep$CO))
+  dfmaster <- rbind(df.keep,dfmaster)
+}
+
+dfmaster <- dfmaster[order(dfmaster$experiment.mean,decreasing = TRUE),]
+  
+sum(is.na(dfmaster$CO))
+#boxplot(CO ~ as.factor(experiment), data = dfmaster)
+
+library(ggplot2)
+ggplot(aes(y = CO, x = experiment), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Experiment")
+
+ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+##Appendix A - DRAFT 
+
+No need to typeset the wrong test! We'll implement this section once the methods have been properly peer reviewed. 
+
+##Bibliography
+
+
+
+
+
+
+
+
+
+
+

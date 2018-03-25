@@ -1,0 +1,25 @@
+purpose: See if we can store the cells and see reactivity over multiple weeks.,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Tube,substrate,Volume to add in mL,total liquid volume,Media type,storage headspace,Formulation,substrate size (cm^2),coating volume (uL), coated surface area (cm^2),shaker speed,,H2,O2,N2,CO,CO2
+SYNGAS,,,,,,,,,,,,,,,,
+AA,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,,,,,
+BB,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,,,,,
+CC,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,,,,,
+DD,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,6/4/2015 11:00:00,12455,,376,1285,49
+EE,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,12287,,353,1249,48
+FF,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,12388,,359,1211,62
+GG,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,6/11/2015 14:50:00,12198,,356,1034,112
+HH,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,12799,,372,1058,119
+II,602h,4,4.15,1YCM,5.0 Ar,1,10,150,10,,,12601,,351,1181,79
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,total,36,,,,,total,1350,,,,,,,,
+,,,,,,,,,,,,,,,,
+NOTES:,,,,,,,,Formulations ,,,,,,,,
+extra cells from low power experiment,,,,,,,,cells,media,total,,,,,,
+420ul left over,,,,,,,,#1 ,0.3,,,,,,,
+Dried at 25 in Hg for 40 min,,,,,,,,420,980,1400,,,,,,
+flushed for 2min with 5.0 Ar,,,,,,,,,,,,,,,,
+put into cupboard under bench at 130pm,,,,,,,,,,,,,,,,

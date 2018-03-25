@@ -1,0 +1,44 @@
+Take Pictures,,,,,,,,,
+,,,,,,,,,
+1,Cut chromatography paper with as much uniformity as possible.,,,,,,,,
+2,Mark with lines to be able to distinguish between them later.,,,,,,,,
+3,Weigh each paper recording each initial weight.,,,,,,,,
+4,Take OD of one bottle,,,,,,,,
+5,Combine cells in oakridge bottle and centrifuge in beckman for 15 minutes.,,,,,,,,
+6,Wash with 20 mL of media and transfer to oakridge tube. ,,,,,,,,
+7,Centrifuge in Rotana 15 minutes.,,,,,,,,
+8,Mix formulation.,,,,,,,,
+9,Make coatings -- 200 uL each.,,,,,,,,
+10,Cap and crimp.,,,,,,,,
+11,"Flush with argon at 20 psi for 5 minutes, 15 minutes, 25 minutes, 35 minutes, and 45 minutes.",,,,,,,,
+12,"while flushing, with extra formulation and di water, measure weight delivered using balance",,,,,,,,
+13,"After flush, weigh each paper noting which strip it was originally. ",,,,,,,,
+14,place strips into anaerobic box with drierite for weekend,,,,,,,,
+,,,,,,,,,
+,Flush time,Intial Weight (g),Final Weight (g),Flushing Station,Final Weight (g),Atmsophere Water (g),Averages,After Drying (g),C(g) Water Residue
+A,5,0.4783,,A,0.5824,0.1041,,0.15652168,0.04692168
+B,5,0.4832,,B,0.5868,0.1036,,0.15655872,0.04695872
+C,5,0.4722,,C,0.5933,0.1211,0.1096,0.17285312,0.06325312
+D,15,0.4706,,D,0.5068,0.0362,,0.051761173,0.018694507
+E,15,0.4729,,E,0.503,0.0301,,0.045737227,0.01267056
+F,15,0.4773,,F,0.5102,0.0329,0.033066667,0.04868272,0.015616053
+G,25,0.4841,,G,0.4825,-0.0016,,0.000739817,-0.004093517
+H,25,0.4779,,H,0.4917,0.0138,,0.01610985,0.011276517
+I,25,0.4789,,K,0.4812,0.0023,0.004833333,0.004614683,-0.00021865
+J,35,0.4856,,L,0.4824,-0.0032,,-0.00086912,-0.00566912
+K,35,0.4789,,M,0.4977,0.0188,,0.02109872,0.01629872
+L,35,0.4879,,N,0.4867,-0.0012,0.0048,0.00114192,-0.00365808
+M,45,0.4728,,Hood 1,0.4681,-0.0047,,-0.00551952,-0.003786187
+N,45,0.4846,,Hood 2,0.4875,0.0029,,0.002060027,0.00379336
+O,45,0.4768,,Hood 3,0.4734,-0.0034,-0.001733333,-0.004226453,-0.00249312
+,,,,,,,,,
+,cell fraction,0.3,,,,,,,
+,Formulations,Cells,media,,Total volume needed,,3000,,
+,,OTA1,2.5% Cysteine -- 0.2 N NaOH,,,,,,
+,volume (uL),1500,3500,,5000,,,,
+,,,,,,,,,
+Experimental notes,,,,,200 uL of DI Water Weight,,0.1983,g,
+At 10:30 OD600 of 2'A is 1.9,,,,,200 uL of Formulation Weight,,0.1954,g,
+Argon tank by door ran out somewhere between 25 and 35 minutes flushes. ,,,,,,,,,
+,,,,,,,,,
+A = after drying weight - (paper weight-atmosphere water)= dry cell weight + water residue,,,,,,,,,
