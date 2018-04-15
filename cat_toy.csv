@@ -1,0 +1,691 @@
+Cat_Name,Device,Group,Day,Order,Scale,Preference,Pref2,FIV
+Branford,Brush,3,1,1,,Both,3. Both,Pos
+Branford,Brush,3,2,1,,Both,3. Both,Pos
+Branford,Brush,3,3,1,,Both,3. Both,Pos
+Branford,Brush,3,4,1,,Both,3. Both,Pos
+Branford,Brush,3,5,1,,Both,3. Both,Pos
+Branford,Brush,3,6,1,,Both,3. Both,Pos
+Branford,Laser,3,1,4,2,NA,,Pos
+Branford,Laser,3,2,3,1,NA,,Pos
+Branford,Laser,3,3,3,1,NA,,Pos
+Branford,Laser,3,4,3,1,NA,,Pos
+Branford,Laser,3,5,4,1,NA,,Pos
+Branford,Laser,3,6,2,1,NA,,Pos
+Branford,Ball,3,1,2,2,NA,,Pos
+Branford,Ball,3,2,4,2,NA,,Pos
+Branford,Ball,3,3,4,2,NA,,Pos
+Branford,Ball,3,4,4,2,NA,,Pos
+Branford,Ball,3,5,2,2,NA,,Pos
+Branford,Ball,3,6,3,2,NA,,Pos
+Branford,Human,3,1,3,2,NA,,Pos
+Branford,Human,3,2,2,2,NA,,Pos
+Branford,Human,3,3,2,2,NA,,Pos
+Branford,Human,3,4,2,2,NA,,Pos
+Branford,Human,3,5,3,2,NA,,Pos
+Branford,Human,3,6,4,2,NA,,Pos
+Branford,Scratching,3,1,5,,None,4. None,Pos
+Branford,Scratching,3,2,5,,None,4. None,Pos
+Branford,Scratching,3,3,5,,None,4. None,Pos
+Branford,Scratching,3,4,5,,None,4. None,Pos
+Branford,Scratching,3,5,5,,Box,2. Box,Pos
+Branford,Scratching,3,6,5,,None,4. None,Pos
+Buick,Brush,1,1,1,,Hair,1. Hairbrush,Neg
+Buick,Brush,1,2,1,,Glove,2. Glovebrush,Neg
+Buick,Brush,1,3,1,,Both,3. Both,Neg
+Buick,Brush,1,4,1,,Both,3. Both,Neg
+Buick,Brush,1,5,1,,Both,3. Both,Neg
+Buick,Brush,1,6,1,,Both,3. Both,Neg
+Buick,Laser,1,1,2,1,NA,,Neg
+Buick,Laser,1,2,2,2,NA,,Neg
+Buick,Laser,1,3,4,2,NA,,Neg
+Buick,Laser,1,4,4,2,NA,,Neg
+Buick,Laser,1,5,3,2,NA,,Neg
+Buick,Laser,1,6,3,2,NA,,Neg
+Buick,Ball,1,1,3,2,NA,,Neg
+Buick,Ball,1,2,3,2,NA,,Neg
+Buick,Ball,1,3,2,1,NA,,Neg
+Buick,Ball,1,4,2,2,NA,,Neg
+Buick,Ball,1,5,4,2,NA,,Neg
+Buick,Ball,1,6,4,1,NA,,Neg
+Buick,Human,1,1,4,0,NA,,Neg
+Buick,Human,1,2,4,0,NA,,Neg
+Buick,Human,1,3,3,0,NA,,Neg
+Buick,Human,1,4,3,0,NA,,Neg
+Buick,Human,1,5,2,1,NA,,Neg
+Buick,Human,1,6,2,0,NA,,Neg
+Buick,Scratching,1,1,5,,Box,2. Box,Neg
+Buick,Scratching,1,2,5,,Both,3. Both,Neg
+Buick,Scratching,1,3,5,,Both,3. Both,Neg
+Buick,Scratching,1,4,5,,Box,2. Box,Neg
+Buick,Scratching,1,5,5,,Box,2. Box,Neg
+Buick,Scratching,1,6,5,,Both,3. Both,Neg
+Chevy,Brush,1,1,1,,None,4. None,Pos
+Chevy,Brush,1,2,1,,Glove,2. Glovebrush,Pos
+Chevy,Brush,1,3,1,,None,4. None,Pos
+Chevy,Brush,1,4,1,,None,4. None,Pos
+Chevy,Brush,1,5,1,,None,4. None,Pos
+Chevy,Brush,1,6,1,,None,4. None,Pos
+Chevy,Laser,1,1,2,0,NA,,Pos
+Chevy,Laser,1,2,2,1,NA,,Pos
+Chevy,Laser,1,3,4,1,NA,,Pos
+Chevy,Laser,1,4,4,0,NA,,Pos
+Chevy,Laser,1,5,3,1,NA,,Pos
+Chevy,Laser,1,6,3,1,NA,,Pos
+Chevy,Ball,1,1,3,1,NA,,Pos
+Chevy,Ball,1,2,3,1,NA,,Pos
+Chevy,Ball,1,3,2,1,NA,,Pos
+Chevy,Ball,1,4,2,1,NA,,Pos
+Chevy,Ball,1,5,4,2,NA,,Pos
+Chevy,Ball,1,6,4,2,NA,,Pos
+Chevy,Human,1,1,4,0,NA,,Pos
+Chevy,Human,1,2,4,0,NA,,Pos
+Chevy,Human,1,3,3,0,NA,,Pos
+Chevy,Human,1,4,3,0,NA,,Pos
+Chevy,Human,1,5,2,0,NA,,Pos
+Chevy,Human,1,6,2,0,NA,,Pos
+Chevy,Scratching,1,1,5,,Box,2. Box,Pos
+Chevy,Scratching,1,2,5,,Box,2. Box,Pos
+Chevy,Scratching,1,3,5,,Box,2. Box,Pos
+Chevy,Scratching,1,4,5,,None,4. None,Pos
+Chevy,Scratching,1,5,5,,None,4. None,Pos
+Chevy,Scratching,1,6,5,,Box,2. Box,Pos
+Coltrane,Brush,3,1,1,,Both,3. Both,Neg
+Coltrane,Brush,3,2,1,,Both,3. Both,Neg
+Coltrane,Brush,3,3,1,,Both,3. Both,Neg
+Coltrane,Brush,3,4,1,,Both,3. Both,Neg
+Coltrane,Brush,3,5,1,,Both,3. Both,Neg
+Coltrane,Brush,3,6,1,,Both,3. Both,Neg
+Coltrane,Laser,3,1,4,2,NA,,Neg
+Coltrane,Laser,3,2,3,2,NA,,Neg
+Coltrane,Laser,3,3,3,1,NA,,Neg
+Coltrane,Laser,3,4,3,2,NA,,Neg
+Coltrane,Laser,3,5,4,1,NA,,Neg
+Coltrane,Laser,3,6,2,2,NA,,Neg
+Coltrane,Ball,3,1,2,1,NA,,Neg
+Coltrane,Ball,3,2,4,2,NA,,Neg
+Coltrane,Ball,3,3,4,2,NA,,Neg
+Coltrane,Ball,3,4,4,2,NA,,Neg
+Coltrane,Ball,3,5,2,1,NA,,Neg
+Coltrane,Ball,3,6,3,2,NA,,Neg
+Coltrane,Human,3,1,3,2,NA,,Neg
+Coltrane,Human,3,2,2,2,NA,,Neg
+Coltrane,Human,3,3,2,2,NA,,Neg
+Coltrane,Human,3,4,2,2,NA,,Neg
+Coltrane,Human,3,5,3,1,NA,,Neg
+Coltrane,Human,3,6,4,0,NA,,Neg
+Coltrane,Scratching,3,1,5,,Box,2. Box,Neg
+Coltrane,Scratching,3,2,5,,Box,2. Box,Neg
+Coltrane,Scratching,3,3,5,,Box,2. Box,Neg
+Coltrane,Scratching,3,4,5,,None,4. None,Neg
+Coltrane,Scratching,3,5,5,,None,4. None,Neg
+Coltrane,Scratching,3,6,5,,Circle,1. Circle,Neg
+Dodge,Brush,1,1,1,,Both,3. Both,Pos
+Dodge,Brush,1,2,1,,Hair,1. Hairbrush,Pos
+Dodge,Brush,1,3,1,,Both,3. Both,Pos
+Dodge,Brush,1,4,1,,Hair,1. Hairbrush,Pos
+Dodge,Brush,1,5,1,,Hair,1. Hairbrush,Pos
+Dodge,Brush,1,6,1,,None,4. None,Pos
+Dodge,Laser,1,1,2,2,NA,,Pos
+Dodge,Laser,1,2,2,2,NA,,Pos
+Dodge,Laser,1,3,4,2,NA,,Pos
+Dodge,Laser,1,4,4,2,NA,,Pos
+Dodge,Laser,1,5,3,2,NA,,Pos
+Dodge,Laser,1,6,3,2,NA,,Pos
+Dodge,Ball,1,1,3,1,NA,,Pos
+Dodge,Ball,1,2,3,1,NA,,Pos
+Dodge,Ball,1,3,2,2,NA,,Pos
+Dodge,Ball,1,4,2,1,NA,,Pos
+Dodge,Ball,1,5,4,1,NA,,Pos
+Dodge,Ball,1,6,4,0,NA,,Pos
+Dodge,Human,1,1,4,1,NA,,Pos
+Dodge,Human,1,2,4,0,NA,,Pos
+Dodge,Human,1,3,3,1,NA,,Pos
+Dodge,Human,1,4,3,0,NA,,Pos
+Dodge,Human,1,5,2,1,NA,,Pos
+Dodge,Human,1,6,2,1,NA,,Pos
+Dodge,Scratching,1,1,5,,Both,3. Both,Pos
+Dodge,Scratching,1,2,5,,Box,2. Box,Pos
+Dodge,Scratching,1,3,5,,Box,2. Box,Pos
+Dodge,Scratching,1,4,5,,Both,3. Both,Pos
+Dodge,Scratching,1,5,5,,Box,2. Box,Pos
+Dodge,Scratching,1,6,5,,Both,3. Both,Pos
+Dorsey,Brush,4,1,1,,Hair,1. Hairbrush,Pos
+Dorsey,Brush,4,2,1,,Glove,2. Glovebrush,Pos
+Dorsey,Brush,4,3,1,,Glove,2. Glovebrush,Pos
+Dorsey,Brush,4,4,1,,Glove,2. Glovebrush,Pos
+Dorsey,Brush,4,5,1,,Glove,2. Glovebrush,Pos
+Dorsey,Brush,4,6,1,,Glove,2. Glovebrush,Pos
+Dorsey,Laser,4,1,2,2,NA,,Pos
+Dorsey,Laser,4,2,2,2,NA,,Pos
+Dorsey,Laser,4,3,4,2,NA,,Pos
+Dorsey,Laser,4,4,4,2,NA,,Pos
+Dorsey,Laser,4,5,3,2,NA,,Pos
+Dorsey,Laser,4,6,3,2,NA,,Pos
+Dorsey,Ball,4,1,3,1,NA,,Pos
+Dorsey,Ball,4,2,3,1,NA,,Pos
+Dorsey,Ball,4,3,2,1,NA,,Pos
+Dorsey,Ball,4,4,2,0,NA,,Pos
+Dorsey,Ball,4,5,4,0,NA,,Pos
+Dorsey,Ball,4,6,4,0,NA,,Pos
+Dorsey,Human,4,1,4,0,NA,,Pos
+Dorsey,Human,4,2,4,1,NA,,Pos
+Dorsey,Human,4,3,3,2,NA,,Pos
+Dorsey,Human,4,4,3,1,NA,,Pos
+Dorsey,Human,4,5,2,0,NA,,Pos
+Dorsey,Human,4,6,2,2,NA,,Pos
+Dorsey,Scratching,4,1,5,,Box,2. Box,Pos
+Dorsey,Scratching,4,2,5,,Box,2. Box,Pos
+Dorsey,Scratching,4,3,5,,Box,2. Box,Pos
+Dorsey,Scratching,4,4,5,,None,4. None,Pos
+Dorsey,Scratching,4,5,5,,Box,2. Box,Pos
+Dorsey,Scratching,4,6,5,,Box,2. Box,Pos
+Doucet,Brush,4,1,1,,None,4. None,Neg
+Doucet,Brush,4,2,1,,None,4. None,Neg
+Doucet,Brush,4,3,1,,None,4. None,Neg
+Doucet,Brush,4,4,1,,None,4. None,Neg
+Doucet,Brush,4,5,1,,None,4. None,Neg
+Doucet,Brush,4,6,1,,None,4. None,Neg
+Doucet,Laser,4,1,2,2,NA,,Neg
+Doucet,Laser,4,2,2,2,NA,,Neg
+Doucet,Laser,4,3,4,2,NA,,Neg
+Doucet,Laser,4,4,4,2,NA,,Neg
+Doucet,Laser,4,5,3,2,NA,,Neg
+Doucet,Laser,4,6,3,2,NA,,Neg
+Doucet,Ball,4,1,3,0,NA,,Neg
+Doucet,Ball,4,2,3,0,NA,,Neg
+Doucet,Ball,4,3,2,0,NA,,Neg
+Doucet,Ball,4,4,2,0,NA,,Neg
+Doucet,Ball,4,5,4,0,NA,,Neg
+Doucet,Ball,4,6,4,0,NA,,Neg
+Doucet,Human,4,1,4,0,NA,,Neg
+Doucet,Human,4,2,4,0,NA,,Neg
+Doucet,Human,4,3,3,1,NA,,Neg
+Doucet,Human,4,4,3,0,NA,,Neg
+Doucet,Human,4,5,2,0,NA,,Neg
+Doucet,Human,4,6,2,0,NA,,Neg
+Doucet,Scratching,4,1,5,,None,4. None,Neg
+Doucet,Scratching,4,2,5,,None,4. None,Neg
+Doucet,Scratching,4,3,5,,None,4. None,Neg
+Doucet,Scratching,4,4,5,,None,4. None,Neg
+Doucet,Scratching,4,5,5,,None,4. None,Neg
+Doucet,Scratching,4,6,5,,None,4. None,Neg
+Ford,Brush,1,1,1,,None,4. None,Pos
+Ford,Brush,1,2,1,,None,4. None,Pos
+Ford,Brush,1,3,1,,None,4. None,Pos
+Ford,Brush,1,4,1,,Glove,2. Glovebrush,Pos
+Ford,Brush,1,5,1,,Glove,2. Glovebrush,Pos
+Ford,Brush,1,6,1,,Glove,2. Glovebrush,Pos
+Ford,Laser,1,1,2,2,NA,,Pos
+Ford,Laser,1,2,2,2,NA,,Pos
+Ford,Laser,1,3,4,2,NA,,Pos
+Ford,Laser,1,4,4,2,NA,,Pos
+Ford,Laser,1,5,3,2,NA,,Pos
+Ford,Laser,1,6,3,2,NA,,Pos
+Ford,Ball,1,1,3,0,NA,,Pos
+Ford,Ball,1,2,3,0,NA,,Pos
+Ford,Ball,1,3,2,1,NA,,Pos
+Ford,Ball,1,4,2,2,NA,,Pos
+Ford,Ball,1,5,4,0,NA,,Pos
+Ford,Ball,1,6,4,1,NA,,Pos
+Ford,Human,1,1,4,0,NA,,Pos
+Ford,Human,1,2,4,0,NA,,Pos
+Ford,Human,1,3,3,0,NA,,Pos
+Ford,Human,1,4,3,1,NA,,Pos
+Ford,Human,1,5,2,2,NA,,Pos
+Ford,Human,1,6,2,1,NA,,Pos
+Ford,Scratching,1,1,5,,Circle,1. Circle,Pos
+Ford,Scratching,1,2,5,,None,4. None,Pos
+Ford,Scratching,1,3,5,,None,4. None,Pos
+Ford,Scratching,1,4,5,,None,4. None,Pos
+Ford,Scratching,1,5,5,,None,4. None,Pos
+Ford,Scratching,1,6,5,,None,4. None,Pos
+Gillespie,Brush,3,1,1,,Both,3. Both,Pos
+Gillespie,Brush,3,2,1,,Glove,2. Glovebrush,Pos
+Gillespie,Brush,3,3,1,,Both,3. Both,Pos
+Gillespie,Brush,3,4,1,,Both,3. Both,Pos
+Gillespie,Brush,3,5,1,,Both,3. Both,Pos
+Gillespie,Brush,3,6,1,,Both,3. Both,Pos
+Gillespie,Laser,3,1,4,2,NA,,Pos
+Gillespie,Laser,3,2,3,2,NA,,Pos
+Gillespie,Laser,3,3,3,2,NA,,Pos
+Gillespie,Laser,3,4,3,2,NA,,Pos
+Gillespie,Laser,3,5,4,2,NA,,Pos
+Gillespie,Laser,3,6,2,2,NA,,Pos
+Gillespie,Ball,3,1,2,1,NA,,Pos
+Gillespie,Ball,3,2,4,1,NA,,Pos
+Gillespie,Ball,3,3,4,1,NA,,Pos
+Gillespie,Ball,3,4,4,0,NA,,Pos
+Gillespie,Ball,3,5,2,0,NA,,Pos
+Gillespie,Ball,3,6,3,0,NA,,Pos
+Gillespie,Human,3,1,3,0,NA,,Pos
+Gillespie,Human,3,2,2,0,NA,,Pos
+Gillespie,Human,3,3,2,1,NA,,Pos
+Gillespie,Human,3,4,2,0,NA,,Pos
+Gillespie,Human,3,5,3,0,NA,,Pos
+Gillespie,Human,3,6,4,0,NA,,Pos
+Gillespie,Scratching,3,1,5,,Both,3. Both,Pos
+Gillespie,Scratching,3,2,5,,Box,2. Box,Pos
+Gillespie,Scratching,3,3,5,,Both,3. Both,Pos
+Gillespie,Scratching,3,4,5,,Box,2. Box,Pos
+Gillespie,Scratching,3,5,5,,None,4. None,Pos
+Gillespie,Scratching,3,6,5,,Box,2. Box,Pos
+Hester,Brush,4,1,1,,Glove,2. Glovebrush,Pos
+Hester,Brush,4,2,1,,Glove,2. Glovebrush,Pos
+Hester,Brush,4,3,1,,Both,3. Both,Pos
+Hester,Brush,4,4,1,,Glove,2. Glovebrush,Pos
+Hester,Brush,4,5,1,,Glove,2. Glovebrush,Pos
+Hester,Brush,4,6,1,,Glove,2. Glovebrush,Pos
+Hester,Laser,4,1,2,0,NA,,Pos
+Hester,Laser,4,2,2,1,NA,,Pos
+Hester,Laser,4,3,4,0,NA,,Pos
+Hester,Laser,4,4,4,0,NA,,Pos
+Hester,Laser,4,5,3,0,NA,,Pos
+Hester,Laser,4,6,3,0,NA,,Pos
+Hester,Ball,4,1,3,1,NA,,Pos
+Hester,Ball,4,2,3,2,NA,,Pos
+Hester,Ball,4,3,2,2,NA,,Pos
+Hester,Ball,4,4,2,2,NA,,Pos
+Hester,Ball,4,5,4,2,NA,,Pos
+Hester,Ball,4,6,4,2,NA,,Pos
+Hester,Human,4,1,4,2,NA,,Pos
+Hester,Human,4,2,4,2,NA,,Pos
+Hester,Human,4,3,3,2,NA,,Pos
+Hester,Human,4,4,3,0,NA,,Pos
+Hester,Human,4,5,2,0,NA,,Pos
+Hester,Human,4,6,2,1,NA,,Pos
+Hester,Scratching,4,1,5,,Box,2. Box,Pos
+Hester,Scratching,4,2,5,,Box,2. Box,Pos
+Hester,Scratching,4,3,5,,Box,2. Box,Pos
+Hester,Scratching,4,4,5,,None,4. None,Pos
+Hester,Scratching,4,5,5,,None,4. None,Pos
+Hester,Scratching,4,6,5,,Box,2. Box,Pos
+Holleman,Brush,3,1,1,,Both,3. Both,Pos
+Holleman,Brush,3,2,1,,Both,3. Both,Pos
+Holleman,Brush,3,3,1,,Hair,1. Hairbrush,Pos
+Holleman,Brush,3,4,1,,Glove,2. Glovebrush,Pos
+Holleman,Brush,3,5,1,,Hair,1. Hairbrush,Pos
+Holleman,Brush,3,6,1,,Both,3. Both,Pos
+Holleman,Laser,3,1,4,2,NA,,Pos
+Holleman,Laser,3,2,3,2,NA,,Pos
+Holleman,Laser,3,3,3,2,NA,,Pos
+Holleman,Laser,3,4,3,2,NA,,Pos
+Holleman,Laser,3,5,4,2,NA,,Pos
+Holleman,Laser,3,6,2,2,NA,,Pos
+Holleman,Ball,3,1,2,0,NA,,Pos
+Holleman,Ball,3,2,4,0,NA,,Pos
+Holleman,Ball,3,3,4,0,NA,,Pos
+Holleman,Ball,3,4,4,0,NA,,Pos
+Holleman,Ball,3,5,2,0,NA,,Pos
+Holleman,Ball,3,6,3,0,NA,,Pos
+Holleman,Human,3,1,3,0,NA,,Pos
+Holleman,Human,3,2,2,1,NA,,Pos
+Holleman,Human,3,3,2,0,NA,,Pos
+Holleman,Human,3,4,2,0,NA,,Pos
+Holleman,Human,3,5,3,1,NA,,Pos
+Holleman,Human,3,6,4,0,NA,,Pos
+Holleman,Scratching,3,1,5,,Box,2. Box,Pos
+Holleman,Scratching,3,2,5,,Box,2. Box,Pos
+Holleman,Scratching,3,3,5,,Box,2. Box,Pos
+Holleman,Scratching,3,4,5,,Box,2. Box,Pos
+Holleman,Scratching,3,5,5,,Box,2. Box,Pos
+Holleman,Scratching,3,6,5,,None,4. None,Pos
+Holliday,Brush,4,1,1,,None,4. None,Pos
+Holliday,Brush,4,2,1,,None,4. None,Pos
+Holliday,Brush,4,3,1,,None,4. None,Pos
+Holliday,Brush,4,4,1,,None,4. None,Pos
+Holliday,Brush,4,5,1,,Glove,2. Glovebrush,Pos
+Holliday,Brush,4,6,1,,Hair,1. Hairbrush,Pos
+Holliday,Laser,4,1,2,1,NA,,Pos
+Holliday,Laser,4,2,2,2,NA,,Pos
+Holliday,Laser,4,3,4,2,NA,,Pos
+Holliday,Laser,4,4,4,2,NA,,Pos
+Holliday,Laser,4,5,3,2,NA,,Pos
+Holliday,Laser,4,6,3,1,NA,,Pos
+Holliday,Ball,4,1,3,0,NA,,Pos
+Holliday,Ball,4,2,3,1,NA,,Pos
+Holliday,Ball,4,3,2,2,NA,,Pos
+Holliday,Ball,4,4,2,2,NA,,Pos
+Holliday,Ball,4,5,4,2,NA,,Pos
+Holliday,Ball,4,6,4,2,NA,,Pos
+Holliday,Human,4,1,4,0,NA,,Pos
+Holliday,Human,4,2,4,0,NA,,Pos
+Holliday,Human,4,3,3,0,NA,,Pos
+Holliday,Human,4,4,3,0,NA,,Pos
+Holliday,Human,4,5,2,0,NA,,Pos
+Holliday,Human,4,6,2,0,NA,,Pos
+Holliday,Scratching,4,1,5,,Box,2. Box,Pos
+Holliday,Scratching,4,2,5,,Box,2. Box,Pos
+Holliday,Scratching,4,3,5,,Box,2. Box,Pos
+Holliday,Scratching,4,4,5,,None,4. None,Pos
+Holliday,Scratching,4,5,5,,Box,2. Box,Pos
+Holliday,Scratching,4,6,5,,Box,2. Box,Pos
+Honda,Brush,2,1,1,,Glove,2. Glovebrush,Neg
+Honda,Brush,2,2,1,,Hair,1. Hairbrush,Neg
+Honda,Brush,2,3,1,,Hair,1. Hairbrush,Neg
+Honda,Brush,2,4,1,,Glove,2. Glovebrush,Neg
+Honda,Brush,2,5,1,,Glove,2. Glovebrush,Neg
+Honda,Brush,2,6,1,,Glove,2. Glovebrush,Neg
+Honda,Laser,2,1,2,2,NA,,Neg
+Honda,Laser,2,2,2,2,NA,,Neg
+Honda,Laser,2,3,4,1,NA,,Neg
+Honda,Laser,2,4,4,1,NA,,Neg
+Honda,Laser,2,5,3,0,NA,,Neg
+Honda,Laser,2,6,3,0,NA,,Neg
+Honda,Ball,2,1,3,0,NA,,Neg
+Honda,Ball,2,2,3,0,NA,,Neg
+Honda,Ball,2,3,2,0,NA,,Neg
+Honda,Ball,2,4,2,0,NA,,Neg
+Honda,Ball,2,5,4,0,NA,,Neg
+Honda,Ball,2,6,4,0,NA,,Neg
+Honda,Human,2,1,4,1,NA,,Neg
+Honda,Human,2,2,4,1,NA,,Neg
+Honda,Human,2,3,3,1,NA,,Neg
+Honda,Human,2,4,3,2,NA,,Neg
+Honda,Human,2,5,2,1,NA,,Neg
+Honda,Human,2,6,2,1,NA,,Neg
+Honda,Scratching,2,1,5,,Box,2. Box,Neg
+Honda,Scratching,2,2,5,,Box,2. Box,Neg
+Honda,Scratching,2,3,5,,Box,2. Box,Neg
+Honda,Scratching,2,4,5,,None,4. None,Neg
+Honda,Scratching,2,5,5,,Box,2. Box,Neg
+Honda,Scratching,2,6,5,,Box,2. Box,Neg
+Isuzu,Brush,2,1,1,,Glove,2. Glovebrush,Pos
+Isuzu,Brush,2,2,1,,Glove,2. Glovebrush,Pos
+Isuzu,Brush,2,3,1,,Hair,1. Hairbrush,Pos
+Isuzu,Brush,2,4,1,,Both,3. Both,Pos
+Isuzu,Brush,2,5,1,,Hair,1. Hairbrush,Pos
+Isuzu,Brush,2,6,1,,Glove,2. Glovebrush,Pos
+Isuzu,Laser,2,1,2,2,NA,,Pos
+Isuzu,Laser,2,2,2,2,NA,,Pos
+Isuzu,Laser,2,3,4,1,NA,,Pos
+Isuzu,Laser,2,4,4,1,NA,,Pos
+Isuzu,Laser,2,5,3,1,NA,,Pos
+Isuzu,Laser,2,6,3,0,NA,,Pos
+Isuzu,Ball,2,1,3,1,NA,,Pos
+Isuzu,Ball,2,2,3,1,NA,,Pos
+Isuzu,Ball,2,3,2,0,NA,,Pos
+Isuzu,Ball,2,4,2,0,NA,,Pos
+Isuzu,Ball,2,5,4,0,NA,,Pos
+Isuzu,Ball,2,6,4,0,NA,,Pos
+Isuzu,Human,2,1,4,2,NA,,Pos
+Isuzu,Human,2,2,4,2,NA,,Pos
+Isuzu,Human,2,3,3,2,NA,,Pos
+Isuzu,Human,2,4,3,2,NA,,Pos
+Isuzu,Human,2,5,2,2,NA,,Pos
+Isuzu,Human,2,6,2,2,NA,,Pos
+Isuzu,Scratching,2,1,5,,Box,2. Box,Pos
+Isuzu,Scratching,2,2,5,,Box,2. Box,Pos
+Isuzu,Scratching,2,3,5,,Box,2. Box,Pos
+Isuzu,Scratching,2,4,5,,None,4. None,Pos
+Isuzu,Scratching,2,5,5,,None,4. None,Pos
+Isuzu,Scratching,2,6,5,,Box,2. Box,Pos
+Jaguar,Brush,3,1,1,,Both,3. Both,Neg
+Jaguar,Brush,3,2,1,,Hair,1. Hairbrush,Neg
+Jaguar,Brush,3,3,1,,Both,3. Both,Neg
+Jaguar,Brush,3,4,1,,Glove,2. Glovebrush,Neg
+Jaguar,Brush,3,5,1,,Glove,2. Glovebrush,Neg
+Jaguar,Brush,3,6,1,,Glove,2. Glovebrush,Neg
+Jaguar,Laser,3,1,4,2,NA,,Neg
+Jaguar,Laser,3,2,3,2,NA,,Neg
+Jaguar,Laser,3,3,3,2,NA,,Neg
+Jaguar,Laser,3,4,3,2,NA,,Neg
+Jaguar,Laser,3,5,4,2,NA,,Neg
+Jaguar,Laser,3,6,2,2,NA,,Neg
+Jaguar,Ball,3,1,2,2,NA,,Neg
+Jaguar,Ball,3,2,4,2,NA,,Neg
+Jaguar,Ball,3,3,4,2,NA,,Neg
+Jaguar,Ball,3,4,4,2,NA,,Neg
+Jaguar,Ball,3,5,2,2,NA,,Neg
+Jaguar,Ball,3,6,3,2,NA,,Neg
+Jaguar,Human,3,1,3,2,NA,,Neg
+Jaguar,Human,3,2,2,1,NA,,Neg
+Jaguar,Human,3,3,2,1,NA,,Neg
+Jaguar,Human,3,4,2,2,NA,,Neg
+Jaguar,Human,3,5,3,1,NA,,Neg
+Jaguar,Human,3,6,4,1,NA,,Neg
+Jaguar,Scratching,3,1,5,,None,4. None,Neg
+Jaguar,Scratching,3,2,5,,None,4. None,Neg
+Jaguar,Scratching,3,3,5,,None,4. None,Neg
+Jaguar,Scratching,3,4,5,,None,4. None,Neg
+Jaguar,Scratching,3,5,5,,None,4. None,Neg
+Jaguar,Scratching,3,6,5,,Both,3. Both,Neg
+Kia,Brush,2,1,1,,Both,3. Both,Pos
+Kia,Brush,2,2,1,,Both,3. Both,Pos
+Kia,Brush,2,3,1,,Glove,2. Glovebrush,Pos
+Kia,Brush,2,4,1,,Glove,2. Glovebrush,Pos
+Kia,Brush,2,5,1,,Both,3. Both,Pos
+Kia,Brush,2,6,1,,Glove,2. Glovebrush,Pos
+Kia,Laser,2,1,2,1,NA,,Pos
+Kia,Laser,2,2,2,2,NA,,Pos
+Kia,Laser,2,3,4,1,NA,,Pos
+Kia,Laser,2,4,4,0,NA,,Pos
+Kia,Laser,2,5,3,1,NA,,Pos
+Kia,Laser,2,6,3,0,NA,,Pos
+Kia,Ball,2,1,3,1,NA,,Pos
+Kia,Ball,2,2,3,0,NA,,Pos
+Kia,Ball,2,3,2,1,NA,,Pos
+Kia,Ball,2,4,2,0,NA,,Pos
+Kia,Ball,2,5,4,0,NA,,Pos
+Kia,Ball,2,6,4,0,NA,,Pos
+Kia,Human,2,1,4,1,NA,,Pos
+Kia,Human,2,2,4,2,NA,,Pos
+Kia,Human,2,3,3,2,NA,,Pos
+Kia,Human,2,4,3,1,NA,,Pos
+Kia,Human,2,5,2,1,NA,,Pos
+Kia,Human,2,6,2,1,NA,,Pos
+Kia,Scratching,2,1,5,,Box,2. Box,Pos
+Kia,Scratching,2,2,5,,Box,2. Box,Pos
+Kia,Scratching,2,3,5,,Box,2. Box,Pos
+Kia,Scratching,2,4,5,,None,4. None,Pos
+Kia,Scratching,2,5,5,,Box,2. Box,Pos
+Kia,Scratching,2,6,5,,None,4. None,Pos
+Mazda,Brush,2,1,1,,Glove,2. Glovebrush,Pos
+Mazda,Brush,2,2,1,,Hair,1. Hairbrush,Pos
+Mazda,Brush,2,3,1,,Hair,1. Hairbrush,Pos
+Mazda,Brush,2,4,1,,Hair,1. Hairbrush,Pos
+Mazda,Brush,2,5,1,,Both,3. Both,Pos
+Mazda,Brush,2,6,1,,Both,3. Both,Pos
+Mazda,Laser,2,1,2,2,NA,,Pos
+Mazda,Laser,2,2,2,2,NA,,Pos
+Mazda,Laser,2,3,4,2,NA,,Pos
+Mazda,Laser,2,4,4,2,NA,,Pos
+Mazda,Laser,2,5,3,2,NA,,Pos
+Mazda,Laser,2,6,3,2,NA,,Pos
+Mazda,Ball,2,1,3,1,NA,,Pos
+Mazda,Ball,2,2,3,1,NA,,Pos
+Mazda,Ball,2,3,2,1,NA,,Pos
+Mazda,Ball,2,4,2,0,NA,,Pos
+Mazda,Ball,2,5,4,0,NA,,Pos
+Mazda,Ball,2,6,4,0,NA,,Pos
+Mazda,Human,2,1,4,1,NA,,Pos
+Mazda,Human,2,2,4,0,NA,,Pos
+Mazda,Human,2,3,3,2,NA,,Pos
+Mazda,Human,2,4,3,2,NA,,Pos
+Mazda,Human,2,5,2,2,NA,,Pos
+Mazda,Human,2,6,2,2,NA,,Pos
+Mazda,Scratching,2,1,5,,Box,2. Box,Pos
+Mazda,Scratching,2,2,5,,Box,2. Box,Pos
+Mazda,Scratching,2,3,5,,Box,2. Box,Pos
+Mazda,Scratching,2,4,5,,Box,2. Box,Pos
+Mazda,Scratching,2,5,5,,Box,2. Box,Pos
+Mazda,Scratching,2,6,5,,Box,2. Box,Pos
+Pontiac,Brush,1,1,1,,Both,3. Both,Pos
+Pontiac,Brush,1,2,1,,Both,3. Both,Pos
+Pontiac,Brush,1,3,1,,Glove,2. Glovebrush,Pos
+Pontiac,Brush,1,4,1,,Glove,2. Glovebrush,Pos
+Pontiac,Brush,1,5,1,,Glove,2. Glovebrush,Pos
+Pontiac,Brush,1,6,1,,Glove,2. Glovebrush,Pos
+Pontiac,Laser,1,1,2,2,NA,,Pos
+Pontiac,Laser,1,2,2,2,NA,,Pos
+Pontiac,Laser,1,3,4,2,NA,,Pos
+Pontiac,Laser,1,4,4,2,NA,,Pos
+Pontiac,Laser,1,5,3,2,NA,,Pos
+Pontiac,Laser,1,6,3,2,NA,,Pos
+Pontiac,Ball,1,1,3,2,NA,,Pos
+Pontiac,Ball,1,2,3,2,NA,,Pos
+Pontiac,Ball,1,3,2,2,NA,,Pos
+Pontiac,Ball,1,4,2,2,NA,,Pos
+Pontiac,Ball,1,5,4,2,NA,,Pos
+Pontiac,Ball,1,6,4,2,NA,,Pos
+Pontiac,Human,1,1,4,2,NA,,Pos
+Pontiac,Human,1,2,4,2,NA,,Pos
+Pontiac,Human,1,3,3,2,NA,,Pos
+Pontiac,Human,1,4,3,2,NA,,Pos
+Pontiac,Human,1,5,2,2,NA,,Pos
+Pontiac,Human,1,6,2,2,NA,,Pos
+Pontiac,Scratching,1,1,5,,Box,2. Box,Pos
+Pontiac,Scratching,1,2,5,,None,4. None,Pos
+Pontiac,Scratching,1,3,5,,None,4. None,Pos
+Pontiac,Scratching,1,4,5,,None,4. None,Pos
+Pontiac,Scratching,1,5,5,,None,4. None,Pos
+Pontiac,Scratching,1,6,5,,None,4. None,Pos
+Rolls,Brush,3,1,1,,Both,3. Both,Pos
+Rolls,Brush,3,2,1,,Both,3. Both,Pos
+Rolls,Brush,3,3,1,,Hair,1. Hairbrush,Pos
+Rolls,Brush,3,4,1,,Both,3. Both,Pos
+Rolls,Brush,3,5,1,,Hair,1. Hairbrush,Pos
+Rolls,Brush,3,6,1,,Both,3. Both,Pos
+Rolls,Laser,3,1,4,2,NA,,Pos
+Rolls,Laser,3,2,3,2,NA,,Pos
+Rolls,Laser,3,3,3,2,NA,,Pos
+Rolls,Laser,3,4,3,2,NA,,Pos
+Rolls,Laser,3,5,4,2,NA,,Pos
+Rolls,Laser,3,6,2,2,NA,,Pos
+Rolls,Ball,3,1,2,2,NA,,Pos
+Rolls,Ball,3,2,4,2,NA,,Pos
+Rolls,Ball,3,3,4,2,NA,,Pos
+Rolls,Ball,3,4,4,2,NA,,Pos
+Rolls,Ball,3,5,2,2,NA,,Pos
+Rolls,Ball,3,6,3,2,NA,,Pos
+Rolls,Human,3,1,3,2,NA,,Pos
+Rolls,Human,3,2,2,2,NA,,Pos
+Rolls,Human,3,3,2,1,NA,,Pos
+Rolls,Human,3,4,2,2,NA,,Pos
+Rolls,Human,3,5,3,2,NA,,Pos
+Rolls,Human,3,6,4,1,NA,,Pos
+Rolls,Scratching,3,1,5,,None,4. None,Pos
+Rolls,Scratching,3,2,5,,None,4. None,Pos
+Rolls,Scratching,3,3,5,,None,4. None,Pos
+Rolls,Scratching,3,4,5,,None,4. None,Pos
+Rolls,Scratching,3,5,5,,None,4. None,Pos
+Rolls,Scratching,3,6,5,,None,4. None,Pos
+Saturn,Brush,1,1,1,,Hair,1. Hairbrush,Pos
+Saturn,Brush,1,2,1,,Glove,2. Glovebrush,Pos
+Saturn,Brush,1,3,1,,Glove,2. Glovebrush,Pos
+Saturn,Brush,1,4,1,,None,4. None,Pos
+Saturn,Brush,1,5,1,,Hair,1. Hairbrush,Pos
+Saturn,Brush,1,6,1,,Hair,1. Hairbrush,Pos
+Saturn,Laser,1,1,2,0,NA,,Pos
+Saturn,Laser,1,2,2,0,NA,,Pos
+Saturn,Laser,1,3,4,0,NA,,Pos
+Saturn,Laser,1,4,4,0,NA,,Pos
+Saturn,Laser,1,5,3,0,NA,,Pos
+Saturn,Laser,1,6,3,0,NA,,Pos
+Saturn,Ball,1,1,3,2,NA,,Pos
+Saturn,Ball,1,2,3,2,NA,,Pos
+Saturn,Ball,1,3,2,2,NA,,Pos
+Saturn,Ball,1,4,2,1,NA,,Pos
+Saturn,Ball,1,5,4,2,NA,,Pos
+Saturn,Ball,1,6,4,2,NA,,Pos
+Saturn,Human,1,1,4,1,NA,,Pos
+Saturn,Human,1,2,4,2,NA,,Pos
+Saturn,Human,1,3,3,1,NA,,Pos
+Saturn,Human,1,4,3,2,NA,,Pos
+Saturn,Human,1,5,2,2,NA,,Pos
+Saturn,Human,1,6,2,2,NA,,Pos
+Saturn,Scratching,1,1,5,,Box,2. Box,Pos
+Saturn,Scratching,1,2,5,,None,4. None,Pos
+Saturn,Scratching,1,3,5,,None,4. None,Pos
+Saturn,Scratching,1,4,5,,None,4. None,Pos
+Saturn,Scratching,1,5,5,,Box,2. Box,Pos
+Saturn,Scratching,1,6,5,,Both,3. Both,Pos
+Scruggs,Brush,4,1,1,,None,4. None,Neg
+Scruggs,Brush,4,2,1,,None,4. None,Neg
+Scruggs,Brush,4,3,1,,None,4. None,Neg
+Scruggs,Brush,4,4,1,,None,4. None,Neg
+Scruggs,Brush,4,5,1,,None,4. None,Neg
+Scruggs,Brush,4,6,1,,None,4. None,Neg
+Scruggs,Laser,4,1,2,1,NA,,Neg
+Scruggs,Laser,4,2,2,2,NA,,Neg
+Scruggs,Laser,4,3,4,2,NA,,Neg
+Scruggs,Laser,4,4,4,1,NA,,Neg
+Scruggs,Laser,4,5,3,1,NA,,Neg
+Scruggs,Laser,4,6,3,1,NA,,Neg
+Scruggs,Ball,4,1,3,0,NA,,Neg
+Scruggs,Ball,4,2,3,0,NA,,Neg
+Scruggs,Ball,4,3,2,0,NA,,Neg
+Scruggs,Ball,4,4,2,0,NA,,Neg
+Scruggs,Ball,4,5,4,0,NA,,Neg
+Scruggs,Ball,4,6,4,0,NA,,Neg
+Scruggs,Human,4,1,4,0,NA,,Neg
+Scruggs,Human,4,2,4,0,NA,,Neg
+Scruggs,Human,4,3,3,0,NA,,Neg
+Scruggs,Human,4,4,3,0,NA,,Neg
+Scruggs,Human,4,5,2,0,NA,,Neg
+Scruggs,Human,4,6,2,0,NA,,Neg
+Scruggs,Scratching,4,1,5,,Box,2. Box,Neg
+Scruggs,Scratching,4,2,5,,Box,2. Box,Neg
+Scruggs,Scratching,4,3,5,,None,4. None,Neg
+Scruggs,Scratching,4,4,5,,Circle,1. Circle,Neg
+Scruggs,Scratching,4,5,5,,None,4. None,Neg
+Scruggs,Scratching,4,6,5,,Box,2. Box,Neg
+Steltz,Brush,4,1,1,,None,4. None,Pos
+Steltz,Brush,4,2,1,,Both,3. Both,Pos
+Steltz,Brush,4,3,1,,Glove,2. Glovebrush,Pos
+Steltz,Brush,4,4,1,,Both,3. Both,Pos
+Steltz,Brush,4,5,1,,Glove,2. Glovebrush,Pos
+Steltz,Brush,4,6,1,,Hair,1. Hairbrush,Pos
+Steltz,Laser,4,1,2,2,NA,,Pos
+Steltz,Laser,4,2,2,2,NA,,Pos
+Steltz,Laser,4,3,4,2,NA,,Pos
+Steltz,Laser,4,4,4,2,NA,,Pos
+Steltz,Laser,4,5,3,2,NA,,Pos
+Steltz,Laser,4,6,3,2,NA,,Pos
+Steltz,Ball,4,1,3,1,NA,,Pos
+Steltz,Ball,4,2,3,1,NA,,Pos
+Steltz,Ball,4,3,2,1,NA,,Pos
+Steltz,Ball,4,4,2,0,NA,,Pos
+Steltz,Ball,4,5,4,1,NA,,Pos
+Steltz,Ball,4,6,4,0,NA,,Pos
+Steltz,Human,4,1,4,0,NA,,Pos
+Steltz,Human,4,2,4,1,NA,,Pos
+Steltz,Human,4,3,3,0,NA,,Pos
+Steltz,Human,4,4,3,0,NA,,Pos
+Steltz,Human,4,5,2,2,NA,,Pos
+Steltz,Human,4,6,2,2,NA,,Pos
+Steltz,Scratching,4,1,5,,Both,3. Both,Pos
+Steltz,Scratching,4,2,5,,Box,2. Box,Pos
+Steltz,Scratching,4,3,5,,None,4. None,Pos
+Steltz,Scratching,4,4,5,,Both,3. Both,Pos
+Steltz,Scratching,4,5,5,,Both,3. Both,Pos
+Steltz,Scratching,4,6,5,,Box,2. Box,Pos
+Toyota,Brush,2,1,1,,Glove,2. Glovebrush,Pos
+Toyota,Brush,2,2,1,,Both,3. Both,Pos
+Toyota,Brush,2,3,1,,Hair,1. Hairbrush,Pos
+Toyota,Brush,2,4,1,,None,4. None,Pos
+Toyota,Brush,2,5,1,,None,4. None,Pos
+Toyota,Brush,2,6,1,,Glove,2. Glovebrush,Pos
+Toyota,Laser,2,1,2,1,NA,,Pos
+Toyota,Laser,2,2,2,2,NA,,Pos
+Toyota,Laser,2,3,4,2,NA,,Pos
+Toyota,Laser,2,4,4,2,NA,,Pos
+Toyota,Laser,2,5,3,2,NA,,Pos
+Toyota,Laser,2,6,3,2,NA,,Pos
+Toyota,Ball,2,1,3,1,NA,,Pos
+Toyota,Ball,2,2,3,2,NA,,Pos
+Toyota,Ball,2,3,2,2,NA,,Pos
+Toyota,Ball,2,4,2,2,NA,,Pos
+Toyota,Ball,2,5,4,1,NA,,Pos
+Toyota,Ball,2,6,4,2,NA,,Pos
+Toyota,Human,2,1,4,1,NA,,Pos
+Toyota,Human,2,2,4,1,NA,,Pos
+Toyota,Human,2,3,3,1,NA,,Pos
+Toyota,Human,2,4,3,0,NA,,Pos
+Toyota,Human,2,5,2,0,NA,,Pos
+Toyota,Human,2,6,2,0,NA,,Pos
+Toyota,Scratching,2,1,5,,Box,2. Box,Pos
+Toyota,Scratching,2,2,5,,Box,2. Box,Pos
+Toyota,Scratching,2,3,5,,Box,2. Box,Pos
+Toyota,Scratching,2,4,5,,Box,2. Box,Pos
+Toyota,Scratching,2,5,5,,Box,2. Box,Pos
+Toyota,Scratching,2,6,5,,Box,2. Box,Pos

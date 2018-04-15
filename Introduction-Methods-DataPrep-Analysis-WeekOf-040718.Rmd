@@ -134,7 +134,7 @@ End Sub
 #### Create master data frame from experiment files.
 
 ```{r, fig.height=8,fig.width=8}
-setwd("C:/E/brucebcampbell-git/ncsu-consulting-project/")
+setwd("d:/brucebcampbell-git/ncsu-consulting-project/")
 wd <- getwd()
 nwd <- paste(wd,"data/r-load-data/",sep = "/")
 setwd(nwd)
@@ -213,13 +213,14 @@ for(i in 1:nrow(dfmaster))
 
 pander(data.frame(missing.response = sum(is.na(dfmaster$CO))),caption = "Count of data elements redacted due to missing response.")
 
+dfmaster <- dfmaster[!is.na(dfmaster$CO), ]  
+
 library(ggplot2)
 ggplot(aes(y = CO, x = experiment), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Experiment")
 
 ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Formulation")
 
 ggplot(aes(y = CO, x = labtech), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Labtech")
-
 
 library(sqldf)
 
@@ -231,6 +232,24 @@ ggplot(aes(y=df.counts$count, x=experiment), data = df.counts) +geom_point(size=
 /newpage
 
 ##Analysis Section
+
+
+```{r}
+d <- data.frame(cbind(dfmaster$experiment,dfmaster$CO))
+names(d) <- c("experiment.r","CO.r")
+d$experiment.r <- as.factor(d$experiment)
+d$experiment.n <- as.numeric(d$experiment.r)
+d$CO.n <- as.numeric(d$CO.r)
+kruskal.test(CO.r~experiment.r, data = d)
+```
+
+
+```{r}
+library(dunn.test)
+attach(d)
+dt <- dunn.test(CO.n, experiment.n, method="hs", list=TRUE)
+
+```
 
 ## Appendix A - DRAFT 
 

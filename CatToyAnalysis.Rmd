@@ -1,0 +1,116 @@
+---
+title: "Cat Toy Preference "
+subtitle: "NCSU ST 542 Consulting Project"
+author: "Bruce Campbell"
+latex_engine: xelatex
+fontsize: 12pt
+output: pdf_document
+---
+
+---
+```{r setup, include=FALSE,echo=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev = 'pdf')
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(prompt=FALSE)
+knitr::opts_chunk$set(fig.height=5)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+knitr::opts_chunk$set(message=FALSE)
+knitr::opts_knit$set(root.dir = ".")
+library(latex2exp)   
+library(pander)
+library(ggplot2)
+library(GGally)
+
+```
+
+## Cat Toy Preference Analysis
+
+The stated *goals of this study are, therefore, to determine the preferences for type of enrichment in laboratory-housed cats, and to determine if FIV status impacts these preferences. We hypothesize that cats do have a preference toward the type of enrichment they want to receive, and the FIV status of the cat will not impact their preferences*
+
+### Statistical Analysis
+
+We perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks as a precursor to selecting the optimal toy preference.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
+
+$$H_0 : P(\mu_j > \mu_k) = \frac{1}{2} \;\; \large{\forall} \;\; j,k \in 1,\dotsc ,J$$
+
+$$H_a : \large \exists \;\;j,k \;\;\in 1,\dotsc ,J  :   P(\mu_j > \mu_k) \neq \frac{1}{2} $$
+A significant Kruskal-Wallis test indicates that at least one experimental median stochastically  dominates the others.  We do not know which one.  The common options for determining stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.
+
+The input to the Dunn test is the per group average rank $\bar{R_j} = \frac{R_j}{n_j}$ and the z-test statistic for groups $j,k$ is 
+
+$$z_{j,k} = \frac{\bar{R_j} - \bar{R_k}}{\sigma_{j,k}}$$ 
+$\sigma_{j,k}$ is a funtion of the overall, group, and rank tie counts.  The null hypothesis of the group pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second groups is one half - $H_0 : P(X_j > X_k) = \frac{1}{2}$. 
+
+The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. 
+
+The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+
+The data is presented in a Excel spreadheet with the following columns
+
+```{r, fig.height=8,fig.width=8,echo=FALSE}
+setwd("d:/brucebcampbell-git/ncsu-consulting-project/")
+
+DataKey <- pander(data.frame(col=c("Cat_Name","Device","Group","Day","Order","Scale","Preference","Pref2","FIV"),description=c("Name of individual cat (unique identifiers)",
+"Enrichment choice (brush, laser, ball, human, scratching item)",
+"Room in which the cat was housed",
+"Six separate days over six weeks",
+"The order of the activities (changed every 2 weeks)",
+"The interest level of the cat (0=no interest; 1=moderate interest; 2=intense interest)",
+"The device the cat chose to interact with",
+"The device the cat chose to interact with, if applicable",
+"FIV Status")	))
+pander(DataKey)
+df <- read.csv("cat_toy.csv")
+laser<- subset(df, Device=="Laser") 
+ball<- subset(df, Device=="Ball") 
+human<- subset(df, Device=="Human") 
+df<-rbind(laser,ball,human)
+```
+
+### Kruskal-Wallis Test 
+
+```{r}
+kruskal.test(Scale~Device, data = df)
+```
+
+The Kruskal-Wallis rank sum test shows that there is a difference in the medians, we now perform the Dunn test to see what the preference ranking are. 
+
+###Dunn Test
+
+```{r, echo=FALSE}
+library(dunn.test)
+attach(df)
+dunn.test(Scale, Device, method="hs", list=TRUE)
+
+#dunn.test(Scale, Device, method="bonferroni", list=TRUE)
+```
+
+The Dunn test shows that cats prefer the laser to humans and balls. ```(Holm-<U+008A>idák)``` is R's broken unicode way to indicate that we choose the  Holm-Sidák adjustment . We tried the Bonferroni adjustment and got the same results. 
+
+
+## Impact of FIV status
+
+To determine if the FIV status we perform the Kruskal-Wallis Test for a difference in Scale for each of the devices. 
+```{r,echo=FALSE}
+print("Laser")
+kruskal.test(Scale~FIV, data = laser)
+
+print("Ball")
+kruskal.test(Scale~FIV, data = ball)
+
+print("Human")
+kruskal.test(Scale~FIV, data = human)
+```
+
+
+
+
+The FIV status does not affect  the scale for laser and ball. But it's interesting to note that the FIV may affect the scale for human. 
+
+
+
+
