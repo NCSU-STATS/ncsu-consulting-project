@@ -5,7 +5,7 @@ author: "Bruce Campbell"
 latex_engine: xelatex
 fontsize: 12pt
 output: pdf_document
-bibliography: Introduction-Methods-DataPrep-Analysis-WeekOf-0407188.bib
+bibliography: BacteriaDrying-ConsultingProject-WeekOf-041518.bib
 ---
 
 ---
@@ -74,7 +74,7 @@ An excel workbook is kept with the experimental data and other lab notes.  This 
 #### Create master data frame from experiment files.
 
 ```{r, fig.height=8,fig.width=8}
-setwd("d:/brucebcampbell-git/ncsu-consulting-project/")
+setwd("c:/e/brucebcampbell-git/ncsu-consulting-project/")
 wd <- getwd()
 nwd <- paste(wd,"data/r-load-data/",sep = "/")
 setwd(nwd)
@@ -180,6 +180,8 @@ names(d) <- c("experiment.r","CO.r")
 d$experiment.r <- as.factor(d$experiment)
 d$experiment.n <- as.numeric(d$experiment.r)
 d$CO.n <- as.numeric(d$CO.r)
+
+attach(d)
 ```
 
 
@@ -189,10 +191,23 @@ d$CO.n <- as.numeric(d$CO.r)
 Levene's test is an alternative to the Bartlett test. The Levene test is less sensitive than the Bartlett test to departures from normality. If you have strong evidence that your data do in fact come from a normal, or nearly normal, distribution, then Bartlett's test has better performance.*
 
 ```{r}
-library(Rcmdr)
+library(car)
+#leveneTest(as.vector(scale(CO.n)), experiment.r)
+
 leveneTest(CO.n, experiment.r)
 ```
+The Levene test is significant so we now look to the Brown and Forsyth.
 
+### Brown and Forsythe Test for equality of variances. 
+
+The Levene test uses spread from the mean to check for variances while the Brown-Forsythe uses deviation from the median. 
+
+```{r}
+library(onewaytests)
+bf.test(CO.n ~ experiment.r,data=d)
+```
+
+ANOVA.  First for comparison we will perform standard ANOVA.  ANOVA is fairly roubust to violations of the contant variance assuption.  
 
 ### ANOVA Test
 
@@ -204,6 +219,15 @@ anova(lm.null,lm)
 ```
 
 The p-value is very small so the null hypothesis that there is no effect of experiment on $CO$ level is rejected. 
+
+### Welch Test 
+
+The R package ```oneswaytest``` is used to perform Welch's heteroscedastic F test see [@WelchTest] for more details. The test is a generalization to the Welch-t test to more than 2 groups. For large samples it amounts to a $\chi^2$ test. 
+
+```{r}
+
+welch.test(CO.n ~ experiment.r, data=d, rate = 0, alpha = 0.05, na.rm = TRUE, verbose = TRUE)
+```
 
 ### Kruskal-Wallis Rank Sum Test 
 ```{r}
