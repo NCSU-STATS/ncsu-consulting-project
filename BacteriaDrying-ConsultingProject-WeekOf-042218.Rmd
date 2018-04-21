@@ -180,6 +180,9 @@ Here we display the reponse data by formulation, and lab technician. We also dis
 
 dfmaster <- dfmaster[!is.na(dfmaster$CO), ]  
 
+dfmaster$experiment.r <- as.factor(dfmaster$experiment)
+
+
 library(ggplot2)
 
 ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Formulation")
@@ -196,26 +199,14 @@ ggplot(aes(y=df.counts$count, x=experiment), data = df.counts) +geom_point(size=
 
 ##Analysis Section
 
-
-```{r, echo=FALSE}
-d <- data.frame(cbind(dfmaster$experiment,dfmaster$CO))
-names(d) <- c("experiment.r","CO.r")
-d$experiment.r <- as.factor(d$experiment)
-d$experiment.n <- as.numeric(d$experiment.r)
-d$CO.n <- as.numeric(d$CO.r)
-
-attach(d)
-```
-
-
 ### Levene Test for Equality of Variances
 \
 
 ```{r}
 library(car)
 #leveneTest(as.vector(scale(CO.n)), experiment.r)
-attach(d)
-leveneTest(CO.n, experiment.r)
+attach(dfmaster)
+leveneTest(CO, experiment.r)
 ```
 The Levene test is significant.   The Brown and Forsyth is an alternative test on the variances and we perform that as confirmation.
 
@@ -225,16 +216,15 @@ The Levene test uses spread from the mean to check for variances while the Brown
 
 ```{r}
 library(onewaytests)
-bf.test(CO.n ~ experiment.r,data=d)
+bf.test(CO ~ experiment.r,data=dfmaster)
 ```
 
 ### ANOVA Test
 
 We perform the standard ANOVA here.  We rejected the hypothesis of constant variance within groups, but ANOVA is fairly roubust to violations of the constant variance assuption.  
 ```{r}
-d.anova <- d[,c("experiment.r","CO.r")]
-lm <- lm(CO.r ~ experiment.r,data = d.anova)
-lm.null <- lm(CO.r ~1 , data = d.anova)
+lm <- lm(CO ~ experiment.r,data = dfmaster)
+lm.null <- lm(CO ~1 , data = dfmaster)
 anova(lm.null,lm)
 ```
 The p-value is very small so the null hypothesis that there is no effect of experiment on $CO$ level is rejected. 
@@ -245,7 +235,7 @@ We perform the Welch's Heteroscedastic F Test.  This is an anternative to the AN
 
 ```{r}
 
-welch.test(CO.n ~ experiment.r, data=d, rate = 0, alpha = 0.05, na.rm = TRUE, verbose = TRUE)
+welch.test(CO ~ experiment.r, data=dfmaster, rate = 0, alpha = 0.05, na.rm = TRUE, verbose = TRUE)
 ```
 
 ### Kruskal-Wallis Rank Sum Test 
@@ -254,7 +244,7 @@ The tests above have demontstrated that the group variances are not equal and th
 
 ```{r}
 
-kruskal.test(CO.r~experiment.r, data = d)
+kruskal.test(CO~experiment.r, data = dfmaster)
 ```
 Again, we have a low p-vaule for the null hypothesis of equal means. 
 
@@ -264,10 +254,10 @@ The Dunn test will be the basis for selecting the experiements which performed t
 
 ```{r,echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(dunn.test)
-attach(d)
-dt <- dunn.test(CO.n, experiment.r, method="hs", list=FALSE)
+attach(dfmaster)
+dt <- dunn.test(CO, experiment.r, method="hs", list=FALSE)
 
-levels.experiment <- levels(d$experiment.r)
+levels.experiment <- levels(dfmaster$experiment.r)
 
 dt.df <- as.data.frame(dt)
 dt.df <- dt.df[order(dt.df$Z),]
@@ -295,11 +285,9 @@ dft.t <- dft.t[order(dft.t$Freq),]
 From the pairwise results we visually inspected the pairwise results for significance and noted several experiments dominated in ranking, but none completey dominated.  There were 820 pairwise comparisons.  We then used the Z-scores to establish a stochastic ordering.  Experiments which dominated 18 or more other experiments are listed below.  
 
 ```{r,echo=FALSE}
-promising.experiments <- c(levels.experiment[18],levels.experiment[6],levels.experiment[9],levels.experiment[19])
-stochastic.order <- dft.t$Freq
-pander(data.frame(experiment=promising.experiments,stochastic.order=stochastic.order), caption = "Most promising experiments")
+pander(dft.t, caption = "Most promising experiments")
 
-ggplot(aes(y = CO.n, x = experiment.r), data = d) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Experiment")
+ggplot(aes(y = CO, x = experiment.r), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Experiment")
 
 ```
 
