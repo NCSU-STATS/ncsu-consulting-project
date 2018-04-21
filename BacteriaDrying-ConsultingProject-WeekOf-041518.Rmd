@@ -11,7 +11,7 @@ bibliography: BacteriaDrying-ConsultingProject-WeekOf-041518.bib
 ---
 ```{r setup, include=FALSE,echo=FALSE}
 rm(list = ls())
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(dev = 'pdf')
 knitr::opts_chunk$set(cache=TRUE)
 knitr::opts_chunk$set(tidy=TRUE)
@@ -48,15 +48,23 @@ An experiment generally contains 10-25 formulations. In all there are 43 experim
 
 ### Statistical Analysis
 
-We will be investigating a several approaches to analyzing this data. The freest step will be to implement a 1 way ANOVA on the experiment and treatment.  This will determine if the mean responses of the experiment are different. The model we use is that the repose $y_{ij}$ of replicate $i$ in the $j$ is expressed as 
+We will be investigating several approaches to analyzing this data. The first step will be to implement a 1 way ANOVA on the experiment and treatment.  This will determine if the mean responses of the experiment are different. The model we use is that the repose $y_{ij}$ of replicate $i$ in the $j$ is expressed as 
 ${\displaystyle y_{i,j}=\mu +\tau _{j}+\varepsilon _{i,j}}$ where ${\displaystyle i=1,\dotsc ,I}$ an index over the replicates ${\displaystyle j=1,\dotsc ,J}$ is the index over experiments, ${\displaystyle \mu _{j}}$ is the mean of the CO measurements for experiment $j$,${\displaystyle \mu }$ is the overall mean CO, and $\tau_j$ is the treatment effect for experiment $j$ - a deviation from the overall mean.  The errors $\epsilon_{i \;j} \sim N(0,\sigma^2)$ are normally distributed with equal variance.
 
-The response is assumed to be normal but we perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks for validation of the one way ANOVA, and as an precursor to selecting the optimal experimental conditions.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. We expect the Kruskal-Wallis result will be consistent with the usual 1 way ANOVA.  The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
+In order to validate the assumption that the group variances are the same we perform a Levene test and  a Brown and Forsythe Test for equality of variances.  The Levene test uses spread from the mean to check for variances while the Brown-Forsythe uses deviation from the median. ANOVA is generally considered robust to violations to the assumptions of constant variance. A Welch test can be used when this assumption is violated.  Welch's Heteroscedastic F test is a generalization to the Welch-t test to more than 2 groups. For large samples it amounts to a $\chi^2$ test. See [@WelchTest] for more details. 
+
+The response is assumed to be normal but we perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks for validation of the one way ANOVA, and as an precursor to selecting the optimal experimental conditions.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. We expect the Kruskal-Wallis result will be consistent with the usual 1 way ANOVA.  
+
+*ote that the Kruskal-Wallis test does not assume that the variances are equal, although you won't be able to interpret a significant result as a simple shift in the medians if the shapes of the distributions differ. the KW test tests for identical distributions and not just for the equality of means.*
+
+The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
 
 $$H_0 : P(\mu_j > \mu_k) = \frac{1}{2} \;\; \large{\forall} \;\; j,k \in 1,\dotsc ,J$$
 
 $$H_a : \large \exists \;\;j,k \;\;\in 1,\dotsc ,J  :   P(\mu_j > \mu_k) \neq \frac{1}{2} $$
-A significant Kruskal-Wallis test indicates that at least one experimental median stochastically  dominates the others.  We do not know which one.  The common options for determining stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.  Appendix A [REVISIT] contains a detailed description of the Kruskal-Wallis and Dunn tests. 
+A significant Kruskal-Wallis test indicates that at least one experimental median stochastically  dominates the others.  We do not know which one.  The common options for determining stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.  An alternative to the dunn test is the Tukey Honest Significant Differences test which creates a set of confidence intervals on the difference between factor means using the Studentized range statistic.  
+
+Appendix A [REVISIT] contains a detailed description of the Kruskal-Wallis and Dunn tests. 
 
 The input to the Dunn test is the per group average rank $\bar{R_j} = \frac{R_j}{n_j}$ and the z-test statistic for groups $j,k$ is 
 
@@ -65,15 +73,21 @@ $\sigma_{j,k}$ is a funtion of the overall, group, and rank tie counts (see appe
 
 The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. 
 
-The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+The Levene test is inplemented in the R package ```car```.  The R package ```oneswaytest``` is used to perform Welch's heteroscedastic F test.  The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+
+This document is rendered in R markdown. The code for some of the steps is not displayed in the rendered document,  here but is available in the raw markdown.  The GitHub repository is [https://github.com/brucebcampbell/ncsu-consulting-project!](https://github.com/brucebcampbell/ncsu-consulting-project)
  
 ## Data Description and Preparation
 An excel workbook is kept with the experimental data and other lab notes.  This consists of 63 worksheets which are pre-processed from the lab workbook into a series of files suitable for ingest into an R data frame object. An Excel VBA script is run to extract the individual experiments into csv files and the resulting files were investigated for inclusion in the data analysis.  Not all of the worksheet in the data workbook contain experimental data. After looking at each file - there were 44 experiments eligible for inclusion in the data analysis.  Of these 44 one was determined to not have any response measurements and was redacted from the statistical analysis.  The VBA code for extracing the worksheets is listed in Appendix A
 
+We will see below that there are two experiements with very low replicate counts.  We redact these to try and keep the design as balanced as possible. 
+```MVK Drying 41516``` had three replicates and ```MJS long drying 52115``` had 6.  The mean replicate count for the remaining experiments is 17. 
+
+50 data elements were found to have no associated reposnse and these were redacted from the analysis data set. 
 
 #### Create master data frame from experiment files.
 
-```{r, fig.height=8,fig.width=8}
+```{r, results='hide', message=FALSE, warning=FALSE,echo=FALSE}
 setwd("c:/e/brucebcampbell-git/ncsu-consulting-project/")
 wd <- getwd()
 nwd <- paste(wd,"data/r-load-data/",sep = "/")
@@ -118,7 +132,6 @@ for(i in 1:length(file.list))
     df$Formulation.pH <- NULL
   }
   
-  
   if("Formulation" %in% colnames(df))
   {
     cat(file.name)
@@ -126,7 +139,6 @@ for(i in 1:length(file.list))
   {
     df$Formulation <- "NA" 
   }
-  
   
   names.to.keep <- c ("experiment","Formulation", "CO", "experiment.count","experiment.mean") 
   
@@ -145,13 +157,22 @@ for(i in 1:nrow(dfmaster))
 {
   dfmaster[i,]$labtech <- substr(as.character(dfmaster[i,]$experiment),1,3)
 }
+
+#redact experiemtns with low counts
+library(sqldf)
+
+df.counts <- sqldf("select experiment, count(CO)  as count from dfmaster group by experiment")
+
+df.counts.redacted <- df.counts[df.counts$experiment!= "MJS long drying 52115" & df.counts$experiment!= "MVK Drying 41516",]
+s
+dfmaster <- dfmaster[dfmaster$experiment!= "MJS long drying 52115" & dfmaster$experiment!= "MVK Drying 41516",]
 ```
 
 \newpage
 
 ```{r, echo=FALSE}
 
-pander(data.frame(missing.response = sum(is.na(dfmaster$CO))),caption = "Count of data elements redacted due to missing response.")
+#pander(data.frame(missing.response = sum(is.na(dfmaster$CO))),caption = "Count of data elements redacted due to missing response.")
 
 dfmaster <- dfmaster[!is.na(dfmaster$CO), ]  
 
@@ -162,12 +183,11 @@ ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(ax
 
 ggplot(aes(y = CO, x = labtech), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Labtech")
 
-library(sqldf)
-
-df.counts <- sqldf("select experiment, count(CO)  as count from dfmaster group by experiment")
 
 ggplot(aes(y=df.counts$count, x=experiment), data = df.counts) +geom_point(size=2, shape=23)+theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("Replicates Per Experiment")
 ```
+
+
 
 \newpage
 
@@ -186,17 +206,15 @@ attach(d)
 
 
 ### Levene Test for Equality of Variances
-
-*Test for Homogeneity of Variances	Levene's test ( Levene 1960) is used to test if k samples have equal variances. Equal variances across samples is called homogeneity of variance. Some statistical tests, for example the analysis of variance, assume that variances are equal across groups or samples. The Levene test can be used to verify that assumption.
-Levene's test is an alternative to the Bartlett test. The Levene test is less sensitive than the Bartlett test to departures from normality. If you have strong evidence that your data do in fact come from a normal, or nearly normal, distribution, then Bartlett's test has better performance.*
+\
 
 ```{r}
 library(car)
 #leveneTest(as.vector(scale(CO.n)), experiment.r)
-
+attach(d)
 leveneTest(CO.n, experiment.r)
 ```
-The Levene test is significant so we now look to the Brown and Forsyth.
+The Levene test is significant.   The Brown and Forsyth is an alternative test on the variances and we perform that as confirmation.
 
 ### Brown and Forsythe Test for equality of variances. 
 
@@ -207,22 +225,20 @@ library(onewaytests)
 bf.test(CO.n ~ experiment.r,data=d)
 ```
 
-ANOVA.  First for comparison we will perform standard ANOVA.  ANOVA is fairly roubust to violations of the contant variance assuption.  
-
 ### ANOVA Test
 
+We perform the standard ANOVA here.  We rejected the hypothesis of constant variance within groups, but ANOVA is fairly roubust to violations of the constant variance assuption.  
 ```{r}
 d.anova <- d[,c("experiment.r","CO.r")]
 lm <- lm(CO.r ~ experiment.r,data = d.anova)
 lm.null <- lm(CO.r ~1 , data = d.anova)
 anova(lm.null,lm)
 ```
-
 The p-value is very small so the null hypothesis that there is no effect of experiment on $CO$ level is rejected. 
 
 ### Welch Test 
 
-The R package ```oneswaytest``` is used to perform Welch's heteroscedastic F test see [@WelchTest] for more details. The test is a generalization to the Welch-t test to more than 2 groups. For large samples it amounts to a $\chi^2$ test. 
+We perform the Welch's Heteroscedastic F Test.  This is an anternative to the ANOVA when the group variances are not equal.  
 
 ```{r}
 
@@ -230,12 +246,19 @@ welch.test(CO.n ~ experiment.r, data=d, rate = 0, alpha = 0.05, na.rm = TRUE, ve
 ```
 
 ### Kruskal-Wallis Rank Sum Test 
+
+The tests above have demontstrated that the group variances are not equal and that the group means are not equal. We perform one last test for equality of group means and then seek to find the sotchastic ordering which will guide our selection of the best experimental results. 
+
 ```{r}
 
 kruskal.test(CO.r~experiment.r, data = d)
 ```
+Again, we have a low p-vaule for the null hypothesis of equal means. 
 
 ### Dunn Test
+
+The Dunn test will be the basis for selecting the experiements which performed the best.  This test tell us which groups are dissimilar and which are not. We use the Z values for selecting 
+
 ```{r,echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(dunn.test)
 attach(d)
@@ -245,15 +268,45 @@ levels.experiment <- levels(d$experiment.r)
 e.comp.sig <- dt[]
 
 dt.df <- as.data.frame(dt)
-dt.df.sig <- dt.df[which(dt.df$P.adjusted <0.05),]
+dt.df.sig <- dt.df[which(dt.df$P.adjusted <0.15),]
 pander(dt.df.sig, caption = "Significant Paired Comparisons")
 
+dt.df.z <- dt.df[which(abs(dt.df$Z)>1.96),]
+dt.df.z <- dt.df.z [order(dt.df.z$Z),]
 
-levels.comparison <-levels(dt.df$comparisons)
+dt.df.z.positive <- dt.df.z[dt.df.z$Z>0,]
+dt.df.z.positive$promising<-t(data.frame(strsplit(as.character(dt.df.z.positive$comparisons),split=' - '))[1,])
 
+dt.df.z.negative <- dt.df.z[dt.df.z$Z<0,]
+dt.df.z.negative$promising<-t(data.frame(strsplit(as.character(dt.df.z.negative$comparisons),split=' - '))[2,])
+
+c.promising <-c(dt.df.z.negative$promising,dt.df.z.positive$promising)
+t.promising <-table(c.promising)
+dft.t <-data.frame(t.promising)
+dft.t <- dft.t[dft.t$Freq>=18,]
+dft.t <- dft.t[order(dft.t$Freq),]
 ```
 
-The most promising experiment is ```r levels.experiment[20]```
+From the pairwise results we visually inspected the pairwise results for significance and noted several experiments dominated in ranking, but none completey dominated.  There were 820 pairwise comparisons.  We then used the Z-scores to establish a stochastic ordering.  Experiments which dominated 18 or more other experiments are listed below.  
+
+```{r,echo=FALSE}
+promising.experiments <- c(levels.experiment[18],levels.experiment[6],levels.experiment[9],levels.experiment[19])
+stochastic.order <- dft.t$Freq
+pander(data.frame(experiment=promising.experiments,stochastic.order=stochastic.order), caption = "Most promising experiments")
+```
+
+
+
+```{r,echo=FALSE}
+# ### Tuckey HSD
+# require(graphics)
+# summary(fm1 <- aov(CO.n ~ experiment.r,data = d))
+# tkR <-TukeyHSD(fm1, "experiment.r", ordered = TRUE)
+# plot(TukeyHSD(fm1, "experiment.r"))
+# a1 <-aov(CO.r ~experiment.r)
+# posthoc <- TukeyHSD(x=a1, 'experiment.r', conf.level=0.95)
+```
+
 
 \newpage 
 
