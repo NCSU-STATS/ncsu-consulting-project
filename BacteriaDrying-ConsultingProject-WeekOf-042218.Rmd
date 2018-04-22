@@ -20,6 +20,7 @@ knitr::opts_chunk$set(fig.height=5)
 knitr::opts_chunk$set(fig.width=7)
 knitr::opts_chunk$set(warning=FALSE)
 knitr::opts_chunk$set(message=FALSE)
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=38),tidy=TRUE)
 knitr::opts_knit$set(root.dir = ".")
 library(latex2exp)   
 library(pander)
@@ -30,62 +31,61 @@ library(GGally)
 
 ## Bacteria Drying
 
-Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering and more recently it has become known that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bio-remediation.  The ability to store bacteria for long periods of time is an important research objective. Scientists need to be able to keep libraries of bacteria to compare bacterial populations over time and to share bacteria among colleagues.  For alternative energy purposes, if bacteria can reliably be dried and re-hydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.  For bio-remediation if bacteria can be reliably re-hydrated on site then deployment becomes easier as storing and transporting the bacteria in a dehydrated state is more cost effective.   
+  Scientists study bacteria for a variety of reasons.  Bacteria have been the source of great human suffering and more recently it has become known that bacteria are also an important part of human health.  In addition to matters of human health and disease, scientists study bacteria as forms of alternative energy and bio-remediation.  The ability to store bacteria for long periods of time is an important research objective. Scientists need to be able to keep libraries of bacteria to compare bacterial populations over time and to share bacteria among colleagues.  For alternative energy purposes, if bacteria can reliably be dried and re-hydrated then growth plants do not have to be collocated with productions plants.  This has the potential to effectively make bacteria a stored energy source.  For bio-remediation if bacteria can be reliably re-hydrated on site then deployment becomes easier as storing and transporting the bacteria in a dehydrated state is more cost effective.   
 
-This study aims to evaluate a variety of bacterial drying methodologies to determine optimal conditions for re-hydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are re-hydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of carbon monoxide produced after re-hydration.  Increasing numbers of bacteria that survive the drying process lead to decreasing carbon monoxide levels.  Since this measurement is the sum of many small contributions we expect the response to be normally distributed. The overall goals are to find the conditions which minimize the carbon monoxide levels - thus providing optimal conditions for bacteria re-hydration. 
+  This study aims to evaluate a variety of bacterial drying methodologies to determine optimal conditions for re-hydration.  The specific aim is to have mechanism capable of producing ethanol/acetate at rates higher than 20% of undried bacteria.  Variables used in the drying process include the addition of chemicals, different mechanisms for removal of oxygen, and different storage conditions.   Samples from the same bacterial population are exposed to different drying mechanisms, are re-hydrated, and then measured for anaerobic respiration.  The population surviving the drying process is measured through the amount of carbon monoxide consumed after re-hydration.  Increasing numbers of bacteria that survive the drying process lead to decreasing carbon monoxide levels.  Since this measurement is the sum of many small contributions we expect the response to be normally distributed. The overall goals are to find the conditions which minimize the carbon monoxide levels - thus providing optimal conditions for bacteria re-hydration. 
 
 ##Methods 
 
 ### Method introduction
 
-The bacteria drying experiments are carried out carefully in a traditional biological laboratory.  Bacteria are grown in culture media prior to the experiments and samples from the same media are used in the different experiments for drying and storage.  After storage bacteria are re-hydrated in individual tubes which are first evacuated with argon and then infused with hydrogen and carbon dioxide to enable respiration. Treatments are grouped into experiments and carried out by different individuals.  There are two phases to the experiment - a drying phase and a re-hydration phase. The treatment could be present in the drying phase or the re-hydration phase. The design is both qualitative and quantitative in the treatments applied. 
+  The bacteria drying experiments are carried out carefully in a traditional biological laboratory.  Bacteria are grown in culture media prior to the experiments and samples from the same media are used in the different experiments for drying and storage.  After storage bacteria are re-hydrated in individual tubes which are first evacuated with argon and then infused with hydrogen and carbon dioxide to enable respiration. Treatments are grouped into experiments and carried out by different individuals.  There are two phases to the experiment - a drying phase and a re-hydration phase. The treatment could be present in the drying phase or the re-hydration phase. The design is both qualitative and quantitative in the treatments applied. 
 
-Vacuum exposure is known to cause damage to bacteria cell membranes and that there is a repair mechanism for eliminating the damage[@PMID:12180476].  This study noted that the damage can be repaired after storage when the temperature is raised. It's also know that freeze-drying can cause genetic injuries in bacteria with the number of mutations increasing with the length of the storage time [@ASHWOODSMITH1980205].  These are just some of the underlying factors that the experiments will be implicitly measuring.
+  Vacuum exposure is known to cause damage to bacteria cell membranes and that there is a repair mechanism for eliminating the damage[@PMID:12180476].  This study noted that the damage can be repaired after storage when the temperature is raised. It's also know that freeze-drying can cause genetic injuries in bacteria with the number of mutations increasing with the length of the storage time [@ASHWOODSMITH1980205].  These are just some of the underlying factors that the experiments will be implicitly measuring.
 
-Detailed notes are included with the experiments indicating any anomalies in them, and describing the lab procedures and materials used.  Bacteria are grown from 7 cultures which are used in the experiments. Each sample is a unit of a cell formulation which is dried, stored, and then re-hydrated. Media is spun in a Beckman, and then rinsed with 20 mL from 25 mL bottle of 1YCM PCG  with 1 mL Cys and 0.2 M NaOH. After that the sample is tube centrifuged in rotana for 15min at 4C and 6000rcf.  After drying tubes are tubes flushed with argon at 20 psi for 25 minutes and then stored.  
+  Detailed notes are included with the experiments indicating any anomalies in them, and describing the lab procedures and materials used.  Bacteria are grown from 7 cultures which are used in the experiments. Each sample is a unit of a cell formulation which is dried, stored, and then re-hydrated. Media is spun in a Beckman, and then rinsed with 20 mL from 25 mL bottle of 1YCM PCG  with 1 mL Cys and 0.2 M NaOH. After that the sample is tube centrifuged in rotana for 15min at 4C and 6000rcf.  After drying tubes are tubes flushed with argon at 20 psi for 25 minutes and then stored.  
 
-An experiment generally contains 10-25 formulations. In all there are 43 experiments with 775 samples.  73 samples have missing responses which are redacted from the analysis.  The measures for this study are the experiment ID's which encode the conditions for the experiment and response conditions of the outcome.  The responses are measures of cellular respiration; H2,O2,N2,CO	CO2.
+  An experiment generally contains 10-25 formulations. In all there are 43 experiments with 775 samples.  73 samples have missing responses which are redacted from the analysis. The measures for this study are the experiment ID's which encode the conditions for the experiment and response conditions of the outcome.  The responses are measures of cellular respiration; H2,O2,N2,CO	CO2.
 
 ### Statistical Analysis
 
-We will be investigating several approaches to analyzing this data. The first step will be to implement a 1 way ANOVA on the experiment and treatment.  This will determine if the mean responses of the experiment are different. The model we use is that the repose $y_{ij}$ of replicate $i$ in the $j$ is expressed as 
-${\displaystyle y_{i,j}=\mu +\tau _{j}+\varepsilon _{i,j}}$ where ${\displaystyle i=1,\dotsc ,I}$ an index over the replicates ${\displaystyle j=1,\dotsc ,J}$ is the index over experiments, ${\displaystyle \mu _{j}}$ is the mean of the CO measurements for experiment $j$,${\displaystyle \mu }$ is the overall mean CO, and $\tau_j$ is the treatment effect for experiment $j$ - a deviation from the overall mean.  The errors $\epsilon_{i \;j} \sim N(0,\sigma^2)$ are normally distributed with equal variance.
+  We will be investigating several approaches to analyzing this data. The first step will be to implement a 1 way ANOVA on the experiment and response (CO levels)  This will determine if the mean responses of the experiment are different. The model we use is that the repose $y_{ij}$ of replicate $i$ in the $j$ is expressed as 
+${\displaystyle y_{i,j}=\mu +\tau _{j}+\varepsilon _{i,j}}$ where ${\displaystyle i=1,\dotsc ,I}$ an index over the replicates ${\displaystyle j=1,\dotsc ,J}$ is the index over experiments, ${\displaystyle \mu _{j}}$ is the mean of the CO measurements for experiment $j$, ${\displaystyle \mu }$ is the overall mean CO, and $\tau_j$ is the treatment effect for experiment $j$ - a deviation from the overall mean.  The errors $\epsilon_{i \;j} \sim N(0,\sigma^2)$ are assumed normally distributed with equal variance.
 
-In order to validate the assumption that the group variances are the same we perform a Levene test and  a Brown and Forsythe Test for equality of variances.  The Levene test uses spread from the mean to check for variances while the Brown-Forsythe uses deviation from the median. ANOVA is generally considered robust to violations to the assumptions of constant variance. A Welch test can be used when this assumption is violated.  Welch's Heteroscedastic F test is a generalization to the Welch-t test to more than 2 groups. For large samples it amounts to a $\chi^2$ test. See [@WelchTest] for more details. 
+  In order to validate the assumption that the group variances are the same we perform a Levene test and  a Brown and Forsythe Test for equality of variances.  The Levene test uses spread from the mean to check for variances while the Brown-Forsythe uses deviation from the median. ANOVA is generally considered robust to violations to the assumptions of constant variance. A Welch test can be used when this assumption is violated.  Welch's Heteroscedastic F test is a generalization to the Welch-t test to more than 2 groups. For large samples it amounts to a $\chi^2$ test. See [@WelchTest] for more details. 
 
-The response is assumed to be normal but we perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks for validation of the one way ANOVA, and as an precursor to selecting the optimal experimental conditions.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. We expect the Kruskal-Wallis result will be consistent with the usual 1 way ANOVA.  
+  The response is assumed to be normal but we perform a non parametric Kruskal-Wallis [@KruskalWallis] one-way analysis of variance by ranks for validation of the one way ANOVA, and as an precursor to selecting the optimal experimental conditions.  The Kruskall-Wallis analysis of variance is an extension of the Mann-Whitney U test to multiple groups. We expect the Kruskal-Wallis result will be consistent with the usual 1 way ANOVA.
 
-*ote that the Kruskal-Wallis test does not assume that the variances are equal, although you won't be able to interpret a significant result as a simple shift in the medians if the shapes of the distributions differ. the KW test tests for identical distributions and not just for the equality of means.*
-
-The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
+  The assumption of the Kruskal-Wallis is that all the groups come from identical distributions with common variance.  The null hypothesis is the medians are all the same for the groups. Using the notation above, the hypothesis are 
 
 $$H_0 : P(\mu_j > \mu_k) = \frac{1}{2} \;\; \large{\forall} \;\; j,k \in 1,\dotsc ,J$$
 
 $$H_a : \large \exists \;\;j,k \;\;\in 1,\dotsc ,J  :   P(\mu_j > \mu_k) \neq \frac{1}{2} $$
-A significant Kruskal-Wallis test indicates that at least one experimental median stochastically  dominates the others.  We do not know which one.  The common options for determining stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.  An alternative to the dunn test is the Tukey Honest Significant Differences test which creates a set of confidence intervals on the difference between factor means using the Studentized range statistic.  
+  A significant Kruskal-Wallis test indicates that at least one experimental median stochastically dominates the others.  We do not know which one.  This test does not assume equal variances.  Significance can not be interpreted as a shift in the medians.  
+
+  The common options for post-hoc determination of stochastic order are to perform pairwise Mann-Whitney tests or to perform Dunn's Multiple Comparison Test [@DUNN]. Dunn's test has several technical advantages over running pairwise Mann-Whitney tests.  The main advantages are that it uses the pooled variance estimate from the Kruskal-Wallis test, and that it reuses the average rank scores from the Kruskal-Wallis test.  An alternative to the Dunn test is the Tukey Honest Significant Differences test which creates a set of confidence intervals on the difference between factor means using the Studentized range statistic.  
 
 Appendix A [REVISIT] contains a detailed description of the Kruskal-Wallis and Dunn tests. 
 
 The input to the Dunn test is the per group average rank $\bar{R_j} = \frac{R_j}{n_j}$ and the z-test statistic for groups $j,k$ is 
 
 $$z_{j,k} = \frac{\bar{R_j} - \bar{R_k}}{\sigma_{j,k}}$$ 
-$\sigma_{j,k}$ is a funtion of the overall, group, and rank tie counts (see appendix A).  The null hypothesis of the group pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second groups is one half - $H_0 : P(X_j > X_k) = \frac{1}{2}$. 
+$\sigma_{j,k}$ is a function of the overall, group, and rank tie counts (see appendix A).  The null hypothesis of the group pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second groups is one half - $H_0 : P(X_j > X_k) = \frac{1}{2}$. 
 
-The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. 
+  The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. 
 
-The Levene test is inplemented in the R package ```car```.  The R package ```oneswaytest``` is used to perform Welch's heteroscedastic F test.  The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+### Proenance of statistical software used
 
-This document is rendered in R markdown. The code for some of the steps is not displayed in the rendered document,  here but is available in the raw markdown.  The GitHub repository is [https://github.com/brucebcampbell/ncsu-consulting-project!](https://github.com/brucebcampbell/ncsu-consulting-project)
+  The Levene test is implemented in the R package ```car```.  The R package ```oneswaytest``` is used to perform Welch's heteroscedastic F test.  The Kruskal-Wallis is implemented in R in the ```kruskal.test``` function in the core ```stats``` package.  The Dunn test is implemented in the  ```dunn.test``` package.   R version 3.4.2 (2017-09-28) is used to perform the analysis. 
+
+  This document is rendered in R markdown. The code for some of the steps is not displayed in the rendered document,  here but is available in the raw markdown.  The GitHub repository is [https://github.com/brucebcampbell/ncsu-consulting-project](https://github.com/brucebcampbell/ncsu-consulting-project)
  
 ## Data Description and Preparation
-An excel workbook is kept with the experimental data and other lab notes.  This consists of 63 worksheets which are pre-processed from the lab workbook into a series of files suitable for ingest into an R data frame object. An Excel VBA script is run to extract the individual experiments into csv files and the resulting files were investigated for inclusion in the data analysis.  Not all of the worksheet in the data workbook contain experimental data. After looking at each file - there were 44 experiments eligible for inclusion in the data analysis.  Of these 44 one was determined to not have any response measurements and was redacted from the statistical analysis.  The VBA code for extracing the worksheets is listed in Appendix A
 
-We will see below that there are two experiements with very low replicate counts.  We redact these to try and keep the design as balanced as possible. 
-```MVK Drying 41516``` had three replicates and ```MJS long drying 52115``` had 6.  The mean replicate count for the remaining experiments is 17. 
+  An excel workbook is kept with the experimental data and other lab notes.  This consists of 63 worksheets which are pre-processed from the lab workbook into a series of files suitable for ingest into an R data frame object. An Excel VBA script is run to extract the individual experiments into csv files and the resulting files were investigated for inclusion in the data analysis.  Not all of the worksheet in the data workbook contain experimental data. After looking at each file - there were 44 experiments eligible for inclusion in the data analysis.  Of these 44 one was determined to not have any response measurements and was redacted from the statistical analysis.  The VBA code for extracting the worksheets is listed in Appendix A
 
-50 data elements were found to have no associated reposnse and these were redacted from the analysis data set. 
-
-#### Create master data frame from experiment files.
+  We will see below that there are two experiments with very low replicate counts.  We redact these to try and keep the design as balanced as possible. 
+```MVK Drying 41516``` had three replicates and ```MJS long drying 52115``` had 6.  The mean replicate count for the remaining experiments is 17.  50 data elements were found to have no associated response and these were redacted from the analysis data set. 
 
 ```{r, results='hide', message=FALSE, warning=FALSE,echo=FALSE}
 setwd("c:/e/brucebcampbell-git/ncsu-consulting-project/")
@@ -172,23 +172,18 @@ dfmaster <- dfmaster[dfmaster$experiment!= "MJS long drying 52115" & dfmaster$ex
 
 ###Data Plots 
 
-Here we display the reponse data by formulation, and lab technician. We also display the counts per experiment. There is evidence that it might be a good idea to follow up this study with a more detailed analysis to account to the variation in the formulation.
+  Here we display the repose data by formulation, and lab technician. We also display the counts per experiment. There is evidence that it might be a good idea to follow up this study with a more detailed analysis to account to the variation in the formulation.
 
-```{r, echo=FALSE}
-
-#pander(data.frame(missing.response = sum(is.na(dfmaster$CO))),caption = "Count of data elements redacted due to missing response.")
-
+```{r, echo=FALSE,fig.width=6,fig.height=3.5}
 dfmaster <- dfmaster[!is.na(dfmaster$CO), ]  
 
 dfmaster$experiment.r <- as.factor(dfmaster$experiment)
-
 
 library(ggplot2)
 
 ggplot(aes(y = CO, x = Formulation), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Formulation")
 
 ggplot(aes(y = CO, x = labtech), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Labtech")
-
 
 ggplot(aes(y=df.counts$count, x=experiment), data = df.counts) +geom_point(size=2, shape=23)+theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("Replicates Per Experiment")
 ```
@@ -202,7 +197,7 @@ ggplot(aes(y=df.counts$count, x=experiment), data = df.counts) +geom_point(size=
 ### Levene Test for Equality of Variances
 \
 
-```{r}
+```{r,size="tiny"}
 library(car)
 #leveneTest(as.vector(scale(CO.n)), experiment.r)
 attach(dfmaster)
@@ -218,10 +213,11 @@ The Levene test uses spread from the mean to check for variances while the Brown
 library(onewaytests)
 bf.test(CO ~ experiment.r,data=dfmaster)
 ```
+This test result is concordant with the Levene test that the variances are not the same. 
 
 ### ANOVA Test
 
-We perform the standard ANOVA here.  We rejected the hypothesis of constant variance within groups, but ANOVA is fairly roubust to violations of the constant variance assuption.  
+We perform the standard ANOVA here.  We rejected the hypothesis of constant variance within groups, but ANOVA is fairly robust to violations of the constant variance assumption.  
 ```{r}
 lm <- lm(CO ~ experiment.r,data = dfmaster)
 lm.null <- lm(CO ~1 , data = dfmaster)
@@ -231,7 +227,7 @@ The p-value is very small so the null hypothesis that there is no effect of expe
 
 ### Welch Test 
 
-We perform the Welch's Heteroscedastic F Test.  This is an anternative to the ANOVA when the group variances are not equal.  
+Welch's Heteroscedastic F Test is performed here. This is an alternative to the ANOVA when the group variances are not equal.  
 
 ```{r}
 
@@ -240,22 +236,23 @@ welch.test(CO ~ experiment.r, data=dfmaster, rate = 0, alpha = 0.05, na.rm = TRU
 
 ### Kruskal-Wallis Rank Sum Test 
 
-The tests above have demontstrated that the group variances are not equal and that the group means are not equal. We perform one last test for equality of group means and then seek to find the sotchastic ordering which will guide our selection of the best experimental results. 
+The tests above have demonstrated that the group variances are not equal and that the group means are not equal. We perform one last test for equality of group medians and then seek to find the stochastic ordering which will guide our selection of the best experimental results. 
 
 ```{r}
 
 kruskal.test(CO~experiment.r, data = dfmaster)
 ```
-Again, we have a low p-vaule for the null hypothesis of equal means. 
+Again, we have a low p-value for the null hypothesis of equal medians 
 
 ### Dunn Test
 
-The Dunn test will be the basis for selecting the experiements which performed the best.  This test tell us which groups are dissimilar and which are not. We use the Z values for selecting 
+The Dunn test will be the basis for selecting the experiments which performed the best.  This test tell us which groups are dissimilar and which are not. We use the Z values for selecting 
 
 ```{r,echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(dunn.test)
+dfmaster$CO.neg <- -dfmaster$CO
 attach(dfmaster)
-dt <- dunn.test(CO, experiment.r, method="hs", list=FALSE)
+dt <- dunn.test(CO.neg, experiment.r, method="hs", list=FALSE)
 
 levels.experiment <- levels(dfmaster$experiment.r)
 
@@ -263,7 +260,7 @@ dt.df <- as.data.frame(dt)
 dt.df <- dt.df[order(dt.df$Z),]
 
 dt.df.sig <- dt.df[which(dt.df$P.adjusted <0.05),]
-pander(dt.df.sig, caption = "Significant Paired Comparisons")
+#pander(dt.df.sig, caption = "Significant Paired Comparisons")
 
 dt.df.z <- dt.df[which(abs(dt.df$Z)>1.96),]
 dt.df.z <- dt.df.z [order(dt.df.z$Z),]
@@ -277,17 +274,20 @@ dt.df.z.negative$promising<-t(data.frame(strsplit(as.character(dt.df.z.negative$
 c.promising <-c(dt.df.z.negative$promising,dt.df.z.positive$promising)
 t.promising <-table(c.promising)
 dft.t <-data.frame(t.promising)
-dft.t <- dft.t[dft.t$Freq>=18,]
+dft.t <- dft.t[dft.t$Freq>=24,]
 dft.t <- dft.t[order(dft.t$Freq),]
 
 ```
 
-From the pairwise results we visually inspected the pairwise results for significance and noted several experiments dominated in ranking, but none completey dominated.  There were 820 pairwise comparisons.  We then used the Z-scores to establish a stochastic ordering.  Experiments which dominated 18 or more other experiments are listed below.  
+From the pairwise results we visually inspected the pairwise results for significance and noted several experiments dominated in ranking, but none complete dominated.  There were 820 pairwise comparisons.  We then used the Z-scores to establish a stochastic ordering.  Experiments which dominated 24 or more other experiments are listed below.  The R code for this section is the most complicated so we present it in Appendix A. 
+
+The ranking was performed for the top and the bottom of the CO scale, but only the experiments at the bottom of the scare are reported in the table below since the study goals are to fund the conditions minimizing CO levels.  The same code was used to perform the ranking, but the ranking for the bottom of the scale was performed on the negative of the CO levels. 
 
 ```{r,echo=FALSE}
-pander(dft.t, caption = "Most promising experiments")
+rownames(dft.t) <- NULL
+pander(dft.t, caption = "Most promising experiments.  Freq is number of experiments dominated.")
 
-ggplot(aes(y = CO, x = experiment.r), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("CO Levels By Experiment")
+ggplot(aes(y = CO.neg, x = experiment.r), data = dfmaster) + geom_boxplot() +theme(axis.text.x = element_text(angle = 90, hjust = 1)) +ggtitle("negative CO Levels By Experiment")
 
 ```
 
@@ -303,9 +303,21 @@ ggplot(aes(y = CO, x = experiment.r), data = dfmaster) + geom_boxplot() +theme(a
 ```
 
 
+###Conclusions
+
+We were able to establish stochastic dominance for several of the experiments at the top and the bottom of the CO scale. The aims are to determine the conditions that minimize the CO. We are not able to interpret the possible causal explanations for the dominance but we make a few notes here after investigating the lab notes for the experiments above. 
+
+Two of the experiments at the top of the scale ( ```REK drying 82815``` and ```REK drying 91115``` ) utilize the chemical trehalose.  A literature search revealed that there is a patent for the use of this compound in bacteria drying [@mateczun_peruski_2003].  It's noteworthy these are the worst performing experiments.
+
+The experiments at the bottom of the CO scale - the best performing by the experimental objectives - did not reveal anything notable in the lab notes.  Presumably there are additional notes somewhere that will provide a causal reason for their good performance. 
+
+A number of the experiments seemed to have lab notes indicating that there were anomalous conditions for the experiment. A follow on study should confirm this and redact or redo those experiments.  Also as a follow on we would recommend investigating the effect of the solution on the outcome.  Possibly this could be controlled for this in a two way analysis or though experimental design. 
+
 \newpage 
 
-##Apendix A VBA Data Extract 
+##Apendix A Code Sections
+
+### VBA Data Extract 
 
 This is the listing of code for the extract of worksheets from excel to csv format. 
 ```
@@ -362,6 +374,38 @@ End Sub
 
 ```
 
+###Stocastic Ordering Code
+
+```
+library(dunn.test)
+attach(dfmaster)
+dt <- dunn.test(CO, experiment.r, method="hs", list=FALSE)
+
+levels.experiment <- levels(dfmaster$experiment.r)
+
+dt.df <- as.data.frame(dt)
+dt.df <- dt.df[order(dt.df$Z),]
+
+dt.df.sig <- dt.df[which(dt.df$P.adjusted <0.05),]
+pander(dt.df.sig, caption = "Significant Paired Comparisons")
+
+dt.df.z <- dt.df[which(abs(dt.df$Z)>1.96),]
+dt.df.z <- dt.df.z [order(dt.df.z$Z),]
+
+dt.df.z.positive <- dt.df.z[dt.df.z$Z>0,]
+dt.df.z.positive$promising<-
+    t(data.frame(strsplit(as.character(dt.df.z.positive$comparisons),split=' - '))[1,])
+
+dt.df.z.negative <- dt.df.z[dt.df.z$Z<0,]
+dt.df.z.negative$promising<-
+    t(data.frame(strsplit(as.character(dt.df.z.negative$comparisons),split=' - '))[2,])
+
+c.promising <-c(dt.df.z.negative$promising,dt.df.z.positive$promising)
+t.promising <-table(c.promising)
+dft.t <-data.frame(t.promising)
+dft.t <- dft.t[dft.t$Freq>=18,]
+dft.t <- dft.t[order(dft.t$Freq),]
+```
 
 ##Bibliography
 
